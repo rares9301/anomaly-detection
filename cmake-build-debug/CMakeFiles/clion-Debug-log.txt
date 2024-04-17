@@ -1,0 +1,27 @@
+/home/ap0/.cache/JetBrains/RemoteDev/dist/59210f2b420c0_CLion-2023.3/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/ap0/.cache/JetBrains/RemoteDev/dist/59210f2b420c0_CLion-2023.3/bin/ninja/linux/x64/ninja -G Ninja -S /home/ap0/Tema1MN -B /home/ap0/Tema1MN/cmake-build-debug
+-- The C compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (1.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ap0/Tema1MN/cmake-build-debug
+
+Cannot get compiler information:
+	Compiler exited with error code 1: /usr/bin/cc -xobjective-c -g -std=gnu11 -fpch-preprocess -v -dD -E
+	Using built-in specs.
+	COLLECT_GCC=/usr/bin/cc
+	OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+	OFFLOAD_TARGET_DEFAULT=1
+	Target: x86_64-linux-gnu
+	Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+	Thread model: posix
+	gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+	COLLECT_GCC_OPTIONS='-g' '-std=gnu11' '-fpch-preprocess' '-v' '-dD' '-E' '-D' '___CIDR_DEFINITIONS_END' '-mtune=generic' '-march=x86-64'
+	 cc1obj -E -quiet -v -imultiarch x86_64-linux-gnu -D ___CIDR_DEFINITIONS_END /tmp/compiler-file15783518274605365150 -mtune=generic -march=x86-64 -std=gnu11 -fpch-preprocess -g -fworking-directory -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -dD
+	cc: fatal error: cannot execute 'cc1obj': execvp: Permission denied
+	compilation terminated.
+	
+	

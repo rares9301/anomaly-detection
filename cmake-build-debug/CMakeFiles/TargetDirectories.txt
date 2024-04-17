@@ -1,0 +1,3 @@
+/home/ap0/Tema1MN/cmake-build-debug/CMakeFiles/Tema1MN.dir
+/home/ap0/Tema1MN/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ap0/Tema1MN/cmake-build-debug/CMakeFiles/rebuild_cache.dir

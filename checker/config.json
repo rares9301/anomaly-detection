@@ -1,0 +1,320 @@
+{
+    "test-groups": [
+        {
+            "name": "Task 1. Anomaly Detection",
+            "folder": "task-1",
+            "expected-file": "./anomaly_detection/",
+            "tests": [
+            
+            	{
+                    "name": "estimate_gaussian_1",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "estimate_gaussian_2",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "estimate_gaussian_3",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "estimate_gaussian_4",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "estimate_gaussian_5",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "multivariate_gaussian_1",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "multivariate_gaussian_2",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "multivariate_gaussian_3",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "multivariate_gaussian_4",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "multivariate_gaussian_5",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "optimal_threshold_1",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "optimal_threshold_2",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "optimal_threshold_3",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "optimal_threshold_4",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "optimal_threshold_5",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "identify_outliers_1",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "identify_outliers_2",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "identify_outliers_3",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "identify_outliers_4",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                },
+                {
+                    "name": "identify_outliers_5",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-2
+                }
+                
+                
+                
+            ]
+        },
+        
+        {
+            "name": "Task 2. Kernel Regression",
+            "folder": "task-2",
+            "expected-file": "./kernel_regression/",
+            "tests": [
+            
+            	
+            	{
+                    "name": "test-kernel-functions",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-9
+                },
+                {
+                    "name": "build-kernel1",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-9
+                },
+                {
+                    "name": "build-kernel2",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-5
+                },
+                {
+                    "name": "build-kernel3",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-5
+                },
+                {
+                    "name": "build-kernel4",
+                    "test-score": 1,
+                    "test-type": "approx",
+                    "max-error": 1e-5
+                },
+                {
+                    "name": "test-cholesky-func",
+                    "test-score": 0.5,
+                    "test-type": "approx",
+                    "max-error": 1e-4
+                },
+                
+                {
+                    "name": "test-lower-inverse",
+                    "test-score": 0.5,
+                    "test-type": "approx",
+                    "max-error": 1e-4
+                },
+                {
+                    "name": "test-get-prediction-params",
+                    "test-score": 2,
+                    "test-type": "approx",
+                    "max-error": 1e-4
+                },
+                {
+                    "name": "test-get-prediction-params2",
+                    "test-score": 2,
+                    "test-type": "approx",
+                    "max-error": 1e-4
+                },
+                {
+                    "name": "test-get-prediction-params-iter",
+                    "test-score": 2,
+                    "test-type": "approx",
+                    "max-error": 1e-4
+                },
+                {
+                    "name": "test-get-prediction-params-iter2",
+                    "test-score": 3,
+                    "test-type": "approx",
+                    "max-error": 1e-4
+                },
+                {
+                    "name": "test-dataset1",
+                    "test-score": 5,
+                    "test-type": "approx",
+                    "max-error": 2.5
+                },
+                {
+                    "name": "test-dataset2",
+                    "test-score": 5,
+                    "test-type": "approx",
+                    "max-error": 3
+                },
+                {
+                    "name": "test-dataset3",
+                    "test-score": 5,
+                    "test-type": "approx",
+                    "max-error": 9
+                },
+                {
+                    "name": "test-dataset4",
+                    "test-score": 5,
+                    "test-type": "approx",
+                    "max-error": 2.5
+                }
+                
+                
+                
+                
+            ]
+        },
+
+        {
+            "name": "Task 3. Stochastic Text Generation",
+            "folder": "task-3",
+            "expected-file": "./stochastic_text_gen/",
+            "tests": [
+            	{
+                    "name": "test-split-input",
+                    "test-score": 1,
+                    "test-type": "exact"
+                }   ,
+                
+            	{
+                    "name": "test-piatza-distinct-words",
+                    "test-score": 2,
+                    "test-type": "exact"
+                }     ,
+                
+            	{
+                    "name": "test-abc-distinct-words",
+                    "test-score": 1,
+                    "test-type": "exact"
+                }      ,
+                
+            	{
+                    "name": "test-abc-k-secv-2",
+                    "test-score": 3,
+                    "test-type": "exact"
+                }      ,
+                
+            	{
+                    "name": "test-abc-k-secv-3",
+                    "test-score": 3,
+                    "test-type": "exact"
+                }    ,
+                
+            	{
+                    "name": "test-abc-distinct-k-secv",
+                    "test-score": 3,
+                    "test-type": "exact"
+                }     ,
+                
+            	{
+                    "name": "test-poe-distinct-k-secv-and-distinct-words",
+                    "test-score": 3,
+                    "test-type": "exact"
+                }       ,
+                
+            	{
+                    "name": "test-poe-word-idx",
+                    "test-score": 4,
+                    "test-type": "exact"
+                }          ,
+                
+            	{
+                    "name": "test-poe-word-idx-and-k-secv-idx",
+                    "test-score": 4,
+                    "test-type": "exact"
+                }        ,
+                
+            	{
+                    "name": "test-abc-stochastic-matrix",
+                    "test-score": 5,
+                    "test-type": "exact"
+                }         ,
+                
+            	{
+                    "name": "test-poe-stochastic-matrix",
+                    "test-score": 7,
+                    "test-type": "exact"
+                }        ,
+                
+            	{
+                    "name": "test-jekyllandhyde-stochastic-matrix",
+                    "test-score": 9,
+                    "test-type": "exact"
+                }    
+            ]
+        }
+        
+    ]
+}
