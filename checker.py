@@ -52,7 +52,7 @@ def read_configuration(filename):
     return json_config
 
 
-# This function will check that the provided JSON configuration is valid.
+# This function will check that the provided JSON[precision, recall, F1] = metrics(true_positives, false_positives, false_negatives) configuration is valid.
 # - - -
 # Params: json_config = The JSON configuration that shall be applied.
 # - - -

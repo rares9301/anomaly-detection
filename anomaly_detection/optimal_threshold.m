@@ -11,12 +11,7 @@ function [best_epsilon, best_F1, associated_precision, associated_recall] = opti
     for epsilon = epsilons
         predictions = probabilities < epsilon;
         [false_positives, false_negatives, true_positives] = check_predictions(predictions, truths);
-
-        % precizia
-        precision = true_positives / (true_positives + false_positives);
-        recall = true_positives / (true_positives + false_negatives);
-
-        F1 = 2 * (precision * recall) / (precision + recall);
+        [precision, recall, F1] = metrics(true_positives, false_positives, false_negatives)
 
         if F1 > best_F1
             best_F1 = F1;

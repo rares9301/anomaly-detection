@@ -1,13 +1,10 @@
 function [precision, recall, F1] = metrics(true_positives, false_positives, false_negatives)
-  % Small constant to prevent division by zero
-  eps = 1e-10;
-
   % Calculate precision
-  precision = true_positives / (true_positives + false_positives + eps);
+  precision = true_positives / (true_positives + false_positives);
 
   % Calculate recall
-  recall = true_positives / (true_positives + false_negatives + eps);
+  recall = true_positives / (true_positives + false_negatives);
 
   % Calculate F1 score
-  F1 = 2 * (precision * recall) / (precision + recall + eps);
+  F1 = 2 * (precision * recall) / (precision + recall);
 endfunction

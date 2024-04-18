@@ -13,7 +13,7 @@ function probability = gaussian_distribution(X, mean_value, variance)
   determinant = det(variance);
 
   % Calculul probabilității
-  probability = (1 / (sqrt(2 * pi * determinant))) * exp(exponent);
+  probability = (1 / (sqrt((2 * pi)^n * determinant))) * exp(exponent);
 
 endfunction
 
