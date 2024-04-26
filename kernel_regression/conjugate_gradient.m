@@ -1,4 +1,5 @@
 function [x] = conjugate_gradient(A, b, x0, tol, max_iter)
+    % circ telelvizat -> work in progress
     r = b - A * x0;
     v = r;
     x = x0;

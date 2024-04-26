@@ -1,4 +1,3 @@
-% Finds the best threshold to use for selecting outliers.
 function [best_epsilon, best_F1, associated_precision, associated_recall] = optimal_threshold(truths, probabilities)
     best_epsilon = 0;
     best_F1 = 0;

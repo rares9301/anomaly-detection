@@ -1,18 +1,18 @@
 function probability = gaussian_distribution(X, mean_value, variance)
 
-  % Calculul diferenței dintre punctul de date și medie
+  % diferenta dintre date si medie
   difference = X - mean_value;
 
-  % Calculul inversului matricei de varianță
+  % inversa matricei de varianta
   inverse_variance = inv(variance);
 
-  % Calculul exponentului
+  % exponent
   exponent = -0.5 * (difference * inverse_variance * difference);
 
-  % Calculul determinantului matricei de varianță
+  % determinant matrice
   determinant = det(variance);
 
-  % Calculul probabilității
+  % probabilitate
   probability = (1 / (sqrt((2 * pi)^n * determinant))) * exp(exponent);
 
 endfunction

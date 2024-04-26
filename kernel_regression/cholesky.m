@@ -1,8 +1,5 @@
 function L = cholesky(A)
   [n, m] = size(A);
-  if n ~= m
-    error('Matrix must be square');
-  end
   L = zeros(n); 
 
   for i = 1:n 

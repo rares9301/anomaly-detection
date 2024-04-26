@@ -1,16 +1,14 @@
 function [K] = build_kernel (X, f, f_param)
-  % Build the kernel matrix
-
-  % Number of data points
+  % set size of matrix
   num_data = size(X, 1);
 
-  % Allocate memory for the kernel matrix
+  % memory allocate
   K = zeros(num_data, num_data);
 
-  % Calculate kernel values for all pairs of data points
+  % compute kernel values
   for i = 1:num_data
     for j = 1:num_data
-      % Calculate kernel value between i-th and j-th data points
+      % kernal value for i <-> j
       K(i, j) = f(X(i, :), X(j, :), f_param);
     end
   end
