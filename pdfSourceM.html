@@ -1,0 +1,910 @@
+<html><head><meta charset="UTF-8"><script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script><style>
+        .article {
+            position: relative;
+            padding-bottom: 24px;
+        }
+        
+
+        .bordered-element {
+            border: 1px solid #c4c4c4;
+            overflow: hidden;
+        }
+        
+
+        .bordered-element-rounded {
+            border: 1px solid #c4c4c4;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+        
+
+        .category {
+            flex-wrap: wrap;
+            padding-top: 8px;
+        }
+        
+
+        .category-item {
+            margin-bottom: 4px;
+            margin-block-end: 0;
+        }
+        
+
+        .category-link {
+            margin-left: 0;
+            padding-inline-start: 0;
+            margin-block-start: 0;
+            padding-bottom: 4px;
+        }
+        
+
+        .category-title {
+            padding-bottom: 8px;
+        }
+        
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+
+        .center-text {
+            text-align: center;
+        }
+        
+
+        .code-block {
+            overflow: hidden;
+            position: relative;
+            padding: 0;
+            border-radius: 8px;
+            font-variant-ligatures: none;
+            background-color: rgba(25, 25, 28, .05);
+            word-break: break-all;
+        }
+        
+
+        .container {
+            max-width: 100%;
+            overflow: hidden;
+            page-break-inside: avoid;
+            display: block;
+        }
+        
+
+        .control {
+            color: #19191c;
+            font-size: 16px;
+            font-weight: 670;
+        }
+        
+
+        .def {
+            padding: 16px;
+            background: #e6e6e6;
+        }
+        
+
+        .definition-list-description {
+            margin-top: 12px;
+            margin-left: 2px;
+        }
+        
+
+        .definition-list-title {
+            font-size: 17px;
+            font-weight: 560;
+            line-height: 24px;
+            color: #19191c;
+            overflow-wrap: break-word;
+        }
+        
+
+        .detached {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-bottom: 8px;
+        }
+        
+
+        .emphasis {
+            color: inherit;
+            font-weight: inherit;
+            font-style: italic;
+        }
+        
+
+        .flex {
+            display: flex;
+        }
+        
+
+        .image {
+            max-width: 100%;
+            max-height: 90vh;
+            width: auto;
+        }
+        
+
+        .image-container {
+            max-width: 100vw;
+        }
+        
+
+        .image-size {
+            height: auto;
+        }
+        
+
+        .inline-code {
+            border-radius: 4px;
+            display: inline;
+            padding: 2px 1px;
+            font-family: JetBrains Sans,monospace;
+            background: #e6e6e6;
+        }
+        
+
+        .list {
+            list-style-type: disc;
+            padding-left: 0;
+            margin-left: 15px;
+        }
+        
+
+        .list-decimal {
+            list-style-type: decimal;
+        }
+        
+
+        .list-item {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            margin-left: 4px;
+        }
+        
+
+        .list-none {
+            list-style-type: none;
+        }
+        
+
+        .main-title {
+            padding-bottom: 24px;
+            margin-top: 0;
+            font-size: 40px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+
+        .mermaid {
+            page-break-inside: avoid;
+        }
+        
+        /* Light theme */
+/** Common */
+#mermaid .label, #mermaid {font-family:"trebuchet ms",arial,sans-serif; font-size:16px;fill:#333;}#mermaid .error-icon{fill:#552222;}#mermaid .error-text{fill:#552222;stroke:#552222;}#mermaid .edge-thickness-normal{stroke-width:2px;}#mermaid .edge-thickness-thick{stroke-width:3.5px;}#mermaid .edge-pattern-solid{stroke-dasharray:0;}#mermaid .edge-pattern-dashed{stroke-dasharray:3;}#mermaid .edge-pattern-dotted{stroke-dasharray:2;}#mermaid .marker{fill:#333333;stroke:#333333;}#mermaid .marker.cross{stroke:#333333;} #mermaid {max-width: 100%;}
+/** Flowchart */
+#mermaid .cluster-label text{fill:#333;}#mermaid .cluster-label span{color:#333;}#mermaid .label text,#mermaid span{fill:#333;color:#333;}#mermaid .node rect,#mermaid .node circle,#mermaid .node ellipse,#mermaid .node polygon,#mermaid .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid .node .label{text-align:center;}#mermaid .node.clickable{cursor:pointer;}#mermaid .arrowheadPath{fill:#333333;}#mermaid .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid .flowchart-link{stroke:#333333;fill:none;}#mermaid .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaid .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid .cluster text{fill:#333;}#mermaid .cluster span{color:#333;}#mermaid div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}
+/** Sequence diagram */
+#mermaid .actor{stroke:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);fill:#ECECFF;}#mermaid text.actor>tspan{fill:black;stroke:none;}#mermaid .actor-line{stroke:grey;}#mermaid .messageLine0{stroke-width:1.5;stroke-dasharray:none;stroke:#333;}#mermaid .messageLine1{stroke-width:1.5;stroke-dasharray:2,2;stroke:#333;}#mermaid #arrowhead path{fill:#333;stroke:#333;}#mermaid .sequenceNumber{fill:white;}#mermaid #sequencenumber{fill:#333;}#mermaid #crosshead path{fill:#333;stroke:#333;}#mermaid .messageText{fill:#333;stroke:none;}#mermaid .labelBox{stroke:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);fill:#ECECFF;}#mermaid .labelText,#mermaid .labelText>tspan{fill:black;stroke:none;}#mermaid .loopText,#mermaid .loopText>tspan{fill:black;stroke:none;}#mermaid .loopLine{stroke-width:2px;stroke-dasharray:2,2;stroke:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);fill:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);}#mermaid .note{stroke:#aaaa33;fill:#fff5ad;}#mermaid .noteText,#mermaid .noteText>tspan{fill:black;stroke:none;}#mermaid .activation0{fill:#f4f4f4;stroke:#666;}#mermaid .activation1{fill:#f4f4f4;stroke:#666;}#mermaid .activation2{fill:#f4f4f4;stroke:#666;}#mermaid .actorPopupMenu{position:absolute;}#mermaid .actorPopupMenuPanel{position:absolute;fill:#ECECFF;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);filter:drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));}#mermaid .actor-man line{stroke:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);fill:#ECECFF;}#mermaid .actor-man circle,#mermaid line{stroke:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);fill:#ECECFF;stroke-width:2px;}
+/** Gantt */
+#mermaid .exclude-range{fill:#eeeeee;}#mermaid .section{stroke:none;opacity:0.2;}#mermaid .section0{fill:rgba(102, 102, 255, 0.49);}#mermaid .section2{fill:#fff400;}#mermaid .section1,#mermaid .section3{fill:white;opacity:0.2;}#mermaid .sectionTitle0{fill:#333;}#mermaid .sectionTitle1{fill:#333;}#mermaid .sectionTitle2{fill:#333;}#mermaid .sectionTitle3{fill:#333;}#mermaid .sectionTitle{text-anchor:start;}#mermaid .grid .tick{stroke:lightgrey;opacity:0.8;shape-rendering:crispEdges;}#mermaid .grid .tick text{fill:#333;}#mermaid .grid path{stroke-width:0;}#mermaid .today{fill:none;stroke:red;stroke-width:2px;}#mermaid .task{stroke-width:2;}#mermaid .taskText{text-anchor:middle;}#mermaid .taskTextOutsideRight{fill:black;text-anchor:start;}#mermaid .taskTextOutsideLeft{fill:black;text-anchor:end;}#mermaid .task.clickable{cursor:pointer;}#mermaid .taskText.clickable{cursor:pointer;fill:#003163!important;font-weight:bold;}#mermaid .taskTextOutsideLeft.clickable{cursor:pointer;fill:#003163!important;font-weight:bold;}#mermaid .taskTextOutsideRight.clickable{cursor:pointer;fill:#003163!important;font-weight:bold;}#mermaid .taskText0,#mermaid .taskText1,#mermaid .taskText2,#mermaid .taskText3{fill:white;}#mermaid .task0,#mermaid .task1,#mermaid .task2,#mermaid .task3{fill:#8a90dd;stroke:#534fbc;}#mermaid .taskTextOutside0,#mermaid .taskTextOutside2{fill:black;}#mermaid .taskTextOutside1,#mermaid .taskTextOutside3{fill:black;}#mermaid .active0,#mermaid .active1,#mermaid .active2,#mermaid .active3{fill:#bfc7ff;stroke:#534fbc;}#mermaid .activeText0,#mermaid .activeText1,#mermaid .activeText2,#mermaid .activeText3{fill:black!important;}#mermaid .done0,#mermaid .done1,#mermaid .done2,#mermaid .done3{stroke:grey;fill:lightgrey;stroke-width:2;}#mermaid .doneText0,#mermaid .doneText1,#mermaid .doneText2,#mermaid .doneText3{fill:black!important;}#mermaid .crit0,#mermaid .crit1,#mermaid .crit2,#mermaid .crit3{stroke:#ff8888;fill:red;stroke-width:2;}#mermaid .activeCrit0,#mermaid .activeCrit1,#mermaid .activeCrit2,#mermaid .activeCrit3{stroke:#ff8888;fill:#bfc7ff;stroke-width:2;}#mermaid .doneCrit0,#mermaid .doneCrit1,#mermaid .doneCrit2,#mermaid .doneCrit3{stroke:#ff8888;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges;}#mermaid .milestone{transform:rotate(45deg) scale(0.8,0.8);}#mermaid .milestoneText{font-style:italic;}#mermaid .doneCritText0,#mermaid .doneCritText1,#mermaid .doneCritText2,#mermaid .doneCritText3{fill:black!important;}#mermaid .activeCritText0,#mermaid .activeCritText1,#mermaid .activeCritText2,#mermaid .activeCritText3{fill:black!important;}#mermaid .titleText{text-anchor:middle;font-size:18px;fill:#333;}
+/** Class diagram */
+#mermaid g.classGroup text{fill:#9370DB;fill:#131300;stroke:none;font-size:10px;}#mermaid g.classGroup text .title{font-weight:bolder;}#mermaid .nodeLabel,#mermaid .edgeLabel{color:#131300;}#mermaid .edgeLabel .label rect{fill:#ECECFF;}#mermaid .label text{fill:#131300;}#mermaid .edgeLabel .label span{background:#ECECFF;}#mermaid .classTitle{font-weight:bolder;}#mermaid .node rect,#mermaid .node circle,#mermaid .node ellipse,#mermaid .node polygon,#mermaid .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid .divider{stroke:#9370DB;stroke:1;}#mermaid g.clickable{cursor:pointer;}#mermaid g.classGroup rect{fill:#ECECFF;stroke:#9370DB;}#mermaid g.classGroup line{stroke:#9370DB;stroke-width:1;}#mermaid .classLabel .box{stroke:none;stroke-width:0;fill:#ECECFF;opacity:0.5;}#mermaid .classLabel .label{fill:#9370DB;font-size:10px;}#mermaid .relation{stroke:#333333;stroke-width:1;fill:none;}#mermaid .dashed-line{stroke-dasharray:3;}#mermaid #compositionStart,#mermaid .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaid #compositionEnd,#mermaid .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaid #dependencyStart,#mermaid .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaid #dependencyStart,#mermaid .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaid #extensionStart,#mermaid .extension{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaid #extensionEnd,#mermaid .extension{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaid #aggregationStart,#mermaid .aggregation{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#mermaid #aggregationEnd,#mermaid .aggregation{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#mermaid #lollipopStart,#mermaid .lollipop{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#mermaid #lollipopEnd,#mermaid .lollipop{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#mermaid .edgeTerminals{font-size:11px;}
+/** Git graph */
+#mermaid .commit-id,#mermaid .commit-msg{fill:lightgrey;}#mermaid .commit0{stroke:hsl(240, 100%, 46.2745098039%);fill:hsl(240, 100%, 46.2745098039%);}#mermaid .commit-highlight0{stroke:hsl(60, 100%, 3.7254901961%);fill:hsl(60, 100%, 3.7254901961%);}#mermaid .label0{fill:hsl(240, 100%, 46.2745098039%);}#mermaid .arrow0{stroke:hsl(240, 100%, 46.2745098039%);}#mermaid .branch-label1{fill:black;}#mermaid .commit1{stroke:hsl(60, 100%, 43.5294117647%);fill:hsl(60, 100%, 43.5294117647%);}#mermaid .commit-highlight1{stroke:rgb(0, 0, 160.5);fill:rgb(0, 0, 160.5);}#mermaid .label1{fill:hsl(60, 100%, 43.5294117647%);}#mermaid .arrow1{stroke:hsl(60, 100%, 43.5294117647%);}#mermaid .branch-label2{fill:black;}#mermaid .commit2{stroke:hsl(80, 100%, 46.2745098039%);fill:hsl(80, 100%, 46.2745098039%);}#mermaid .commit-highlight2{stroke:rgb(48.8333333334, 0, 146.5000000001);fill:rgb(48.8333333334, 0, 146.5000000001);}#mermaid .label2{fill:hsl(80, 100%, 46.2745098039%);}#mermaid .arrow2{stroke:hsl(80, 100%, 46.2745098039%);}#mermaid .branch-label3{fill:#ffffff;}#mermaid .commit3{stroke:hsl(210, 100%, 46.2745098039%);fill:hsl(210, 100%, 46.2745098039%);}#mermaid .commit-highlight3{stroke:rgb(146.5000000001, 73.2500000001, 0);fill:rgb(146.5000000001, 73.2500000001, 0);}#mermaid .label3{fill:hsl(210, 100%, 46.2745098039%);}#mermaid .arrow3{stroke:hsl(210, 100%, 46.2745098039%);}#mermaid .branch-label4{fill:black;}#mermaid .commit4{stroke:hsl(180, 100%, 46.2745098039%);fill:hsl(180, 100%, 46.2745098039%);}#mermaid .commit-highlight4{stroke:rgb(146.5000000001, 0, 0);fill:rgb(146.5000000001, 0, 0);}#mermaid .label4{fill:hsl(180, 100%, 46.2745098039%);}#mermaid .arrow4{stroke:hsl(180, 100%, 46.2745098039%);}#mermaid .branch-label5{fill:black;}#mermaid .commit5{stroke:hsl(150, 100%, 46.2745098039%);fill:hsl(150, 100%, 46.2745098039%);}#mermaid .commit-highlight5{stroke:rgb(146.5000000001, 0, 73.2500000001);fill:rgb(146.5000000001, 0, 73.2500000001);}#mermaid .label5{fill:hsl(150, 100%, 46.2745098039%);}#mermaid .arrow5{stroke:hsl(150, 100%, 46.2745098039%);}#mermaid .branch-label6{fill:black;}#mermaid .commit6{stroke:hsl(300, 100%, 46.2745098039%);fill:hsl(300, 100%, 46.2745098039%);}#mermaid .commit-highlight6{stroke:rgb(0, 146.5000000001, 0);fill:rgb(0, 146.5000000001, 0);}#mermaid .label6{fill:hsl(300, 100%, 46.2745098039%);}#mermaid .arrow6{stroke:hsl(300, 100%, 46.2745098039%);}#mermaid .branch-label7{fill:black;}#mermaid .commit7{stroke:hsl(0, 100%, 46.2745098039%);fill:hsl(0, 100%, 46.2745098039%);}#mermaid .commit-highlight7{stroke:rgb(0, 146.5000000001, 146.5000000001);fill:rgb(0, 146.5000000001, 146.5000000001);}#mermaid .label7{fill:hsl(0, 100%, 46.2745098039%);}#mermaid .arrow7{stroke:hsl(0, 100%, 46.2745098039%);}#mermaid .branch{stroke-width:1;stroke:#333333;stroke-dasharray:2;}#mermaid .commit-label{font-size:10px;fill:#000021;}#mermaid .commit-label-bkg{font-size:10px;fill:#ffffde;opacity:0.5;}#mermaid .tag-label{font-size:10px;fill:#131300;}#mermaid .tag-label-bkg{fill:#ECECFF;stroke:hsl(240, 60%, 86.2745098039%);}#mermaid .tag-hole{fill:#333;}#mermaid .commit-merge{stroke:#ECECFF;fill:#ECECFF;}#mermaid .commit-reverse{stroke:#ECECFF;fill:#ECECFF;stroke-width:3;}#mermaid .commit-highlight-inner{stroke:#ECECFF;fill:#ECECFF;}#mermaid .arrow{stroke-width:8;stroke-linecap:round;fill:none;}
+#mermaid .branchLabel .label {font-size:16px;} #mermaid g.label.branch-label0 text, #mermaid g.label.branch-label3 text { fill: #eee; }
+/** Entity relationship */
+#mermaid .entityBox{fill:#ECECFF;stroke:#9370DB;}#mermaid .attributeBoxOdd{fill:#ffffff;stroke:#9370DB;}#mermaid .attributeBoxEven{fill:#f2f2f2;stroke:#9370DB;}#mermaid .relationshipLabelBox{fill:hsl(80, 100%, 96.2745098039%);opacity:0.7;background-color:hsl(80, 100%, 96.2745098039%);}#mermaid .relationshipLabelBox rect{opacity:0.5;}#mermaid .relationshipLine{stroke:#333333;}
+/** Journey */
+#mermaid .label{color:#333;}#mermaid .mouth{stroke:#666;}#mermaid line{stroke:#333;}#mermaid .legend{fill:#333;}#mermaid .label text{fill:#333;}#mermaid .label{color:#333;}#mermaid .face{fill:#FFF8DC;stroke:#999;}#mermaid .node rect,#mermaid .node circle,#mermaid .node ellipse,#mermaid .node polygon,#mermaid .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid .node .label{text-align:center;}#mermaid .node.clickable{cursor:pointer;}#mermaid .arrowheadPath{fill:#333333;}#mermaid .edgePath .path{stroke:#333333;stroke-width:1.5px;}#mermaid .flowchart-link{stroke:#333333;fill:none;}#mermaid .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid .edgeLabel rect{opacity:0.5;}#mermaid .cluster text{fill:#333;}#mermaid div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid .task-type-0,#mermaid .section-type-0{fill:#ECECFF;}#mermaid .task-type-1,#mermaid .section-type-1{fill:#ffffde;}#mermaid .task-type-2,#mermaid .section-type-2{fill:hsl(304, 100%, 96.2745098039%);}#mermaid .task-type-3,#mermaid .section-type-3{fill:hsl(124, 100%, 93.5294117647%);}#mermaid .task-type-4,#mermaid .section-type-4{fill:hsl(176, 100%, 96.2745098039%);}#mermaid .task-type-5,#mermaid .section-type-5{fill:hsl(-4, 100%, 93.5294117647%);}#mermaid .task-type-6,#mermaid .section-type-6{fill:hsl(8, 100%, 96.2745098039%);}#mermaid .task-type-7,#mermaid .section-type-7{fill:hsl(188, 100%, 93.5294117647%);}
+/** State diagram */
+#mermaid defs #statediagram-barbEnd{fill:#333333;stroke:#333333;}#mermaid g.stateGroup text{fill:#9370DB;stroke:none;font-size:10px;}#mermaid g.stateGroup text{fill:#333;stroke:none;font-size:10px;}#mermaid g.stateGroup .state-title{font-weight:bolder;fill:#131300;}#mermaid g.stateGroup rect{fill:#ECECFF;stroke:#9370DB;}#mermaid g.stateGroup line{stroke:#333333;stroke-width:1;}#mermaid .transition{stroke:#333333;stroke-width:1;fill:none;}#mermaid .stateGroup .composit{fill:white;border-bottom:1px;}#mermaid .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#mermaid .state-note{stroke:#aaaa33;fill:#fff5ad;}#mermaid .state-note text{fill:black;stroke:none;font-size:10px;}#mermaid .stateLabel .box{stroke:none;stroke-width:0;fill:#ECECFF;opacity:0.5;}#mermaid .edgeLabel .label rect{fill:#ECECFF;opacity:0.5;}#mermaid .edgeLabel .label text{fill:#333;}#mermaid .label div .edgeLabel{color:#333;}#mermaid .stateLabel text{fill:#131300;font-size:10px;font-weight:bold;}#mermaid .node circle.state-start{fill:#333333;stroke:#333333;}#mermaid .node .fork-join{fill:#333333;stroke:#333333;}#mermaid .node circle.state-end{fill:#9370DB;stroke:white;stroke-width:1.5;}#mermaid .end-state-inner{fill:white;stroke-width:1.5;}#mermaid .node rect{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid .node polygon{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid #statediagram-barbEnd{fill:#333333;}#mermaid .statediagram-cluster rect{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid .cluster-label,#mermaid .nodeLabel{color:#131300;}#mermaid .statediagram-cluster rect.outer{rx:5px;ry:5px;}#mermaid .statediagram-state .divider{stroke:#9370DB;}#mermaid .statediagram-state .title-state{rx:5px;ry:5px;}#mermaid .statediagram-cluster.statediagram-cluster .inner{fill:white;}#mermaid .statediagram-cluster.statediagram-cluster-alt .inner{fill:#f0f0f0;}#mermaid .statediagram-cluster .inner{rx:0;ry:0;}#mermaid .statediagram-state rect.basic{rx:5px;ry:5px;}#mermaid .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#f0f0f0;}#mermaid .note-edge{stroke-dasharray:5;}#mermaid .statediagram-note rect{fill:#fff5ad;stroke:#aaaa33;stroke-width:1px;rx:0;ry:0;}#mermaid .statediagram-note rect{fill:#fff5ad;stroke:#aaaa33;stroke-width:1px;rx:0;ry:0;}#mermaid .statediagram-note text{fill:black;}#mermaid .statediagram-note .nodeLabel{color:black;}#mermaid .statediagram .edgeLabel{color:red;}#mermaid #dependencyStart,#mermaid #dependencyEnd{fill:#333333;stroke:#333333;stroke-width:1;}
+/** Pie chart */
+#mermaid .pieCircle{stroke:#222;stroke-width:1px;}#mermaid .pieTitleText{text-anchor:middle;font-size:25px;fill:black;}#mermaid .slice{fill:#333;font-size:17px;}#mermaid .legend text{fill:black;font-size:17px;}
+/** Requirements */
+#mermaid marker{fill:#333333;stroke:#333333;}#mermaid marker.cross{stroke:#333333;}#mermaid svg{font-size:16px;}#mermaid .reqBox{fill:#ECECFF;fill-opacity:100%;stroke:hsl(240, 60%, 86.2745098039%);stroke-width:hsl(240, 60%, 86.2745098039%);}#mermaid .reqTitle,#mermaid .reqLabel{fill:#131300;}#mermaid .reqLabelBox{fill:#e8e8e8;fill-opacity:100%;}#mermaid .req-title-line{stroke:hsl(240, 60%, 86.2745098039%);stroke-width:hsl(240, 60%, 86.2745098039%);}#mermaid .relationshipLine{stroke:#333333;stroke-width:1;}#mermaid .relationshipLabel{fill:black;}
+/** C4 system */
+#mermaid .person{stroke:calculated;fill:calculated;}
+/** Mind map */
+#mermaid .section-root.mindmap-node { fill: hsl(240, 100%, 50%); } #mermaid .section-root.mindmap-node text { fill: white; }
+#mermaid .mindmap-edges .edge-depth-0 { stroke-width: 14; }
+#mermaid .mindmap-edges .edge-depth-1 { stroke-width: 11; }
+#mermaid .mindmap-edges .edge-depth-2 { stroke-width: 8; }
+#mermaid .mindmap-edges .edge-depth-3 { stroke-width: 5; }
+#mermaid .mindmap-edges .edge-depth-4 { stroke-width: 3; }
+#mermaid .mindmap-edges .edge-depth-5 { stroke-width: 2; }
+#mermaid .mindmap-edges .edge-depth-6 { stroke-width: 1; }
+#mermaid .mindmap-edges .section-edge-0,  #mermaid .mindmap-node.section-0  path { fill: hsl(60, 100%, 70%); stroke: hsl(60, 100%, 70%); } #mermaid .mindmap-node.section-0  text { fill: black; }
+#mermaid .mindmap-edges .section-edge-1,  #mermaid .mindmap-node.section-1  path { fill: hsl(170, 90%, 70%); stroke: hsl(170, 90%, 70%); } #mermaid .mindmap-node.section-1  text { fill: black; }
+#mermaid .mindmap-edges .section-edge-2,  #mermaid .mindmap-node.section-2  path { fill: hsl(280, 90%, 70%); stroke: hsl(280, 90%, 70%); } #mermaid .mindmap-node.section-2  text { fill: white; }
+#mermaid .mindmap-edges .section-edge-3,  #mermaid .mindmap-node.section-3  path { fill: hsl(30, 90%, 70%);  stroke: hsl(30, 90%, 70%);  } #mermaid .mindmap-node.section-3  text { fill: black; }
+#mermaid .mindmap-edges .section-edge-4,  #mermaid .mindmap-node.section-4  path { fill: hsl(140, 90%, 70%); stroke: hsl(140, 90%, 70%); } #mermaid .mindmap-node.section-4  text { fill: black; }
+#mermaid .mindmap-edges .section-edge-5,  #mermaid .mindmap-node.section-5  path { fill: hsl(250, 90%, 70%); stroke: hsl(250, 90%, 70%); } #mermaid .mindmap-node.section-5  text { fill: white; }
+#mermaid .mindmap-edges .section-edge-6,  #mermaid .mindmap-node.section-6  path { fill: hsl(0, 90%, 70%);   stroke: hsl(0, 90%, 70%);   } #mermaid .mindmap-node.section-6  text { fill: black; }
+#mermaid .mindmap-edges .section-edge-7,  #mermaid .mindmap-node.section-7  path { fill: hsl(110, 90%, 70%); stroke: hsl(110, 90%, 70%); } #mermaid .mindmap-node.section-7  text { fill: black; }
+#mermaid .mindmap-edges .section-edge-8,  #mermaid .mindmap-node.section-8  path { fill: hsl(220, 90%, 70%); stroke: hsl(220, 90%, 70%); } #mermaid .mindmap-node.section-8  text { fill: white; }
+#mermaid .mindmap-edges .section-edge-9,  #mermaid .mindmap-node.section-9  path { fill: hsl(330, 90%, 70%); stroke: hsl(330, 90%, 70%); } #mermaid .mindmap-node.section-9  text { fill: black; }
+#mermaid .mindmap-edges .section-edge-10, #mermaid .mindmap-node.section-10 path { fill: hsl(80, 90%, 70%);  stroke: hsl(80, 90%, 70%);  } #mermaid .mindmap-node.section-10 text { fill: black; }
+#mermaid .mindmap-edges .section-edge-11, #mermaid .mindmap-node.section-11 path { fill: hsl(190, 90%, 70%); stroke: hsl(190, 90%, 70%); } #mermaid .mindmap-node.section-11 text { fill: black; }
+#mermaid .mindmap-edges .section-edge-12, #mermaid .mindmap-node.section-12 path { fill: hsl(300, 90%, 70%); stroke: hsl(300, 90%, 70%); } #mermaid .mindmap-node.section-12 text { fill: black; }
+/** Timeline */
+#mermaid .timeline text tspan { fill: #222; } #mermaid .timeline-node path { fill: #ccc; }
+
+/* Dark theme */
+/** Common */
+html.theme-dark #mermaid {fill:#ccc;}html.theme-dark #mermaid .error-icon{fill:#a44141;}html.theme-dark #mermaid .error-text{fill:#ddd;stroke:#ddd;}html.theme-dark #mermaid .edge-pattern-solid{stroke-dasharray:0;}html.theme-dark #mermaid .edge-pattern-dashed{stroke-dasharray:3;}html.theme-dark #mermaid .edge-pattern-dotted{stroke-dasharray:2;}html.theme-dark #mermaid .marker{fill:lightgrey;stroke:lightgrey;}html.theme-dark #mermaid .marker.cross{stroke:lightgrey;}
+/** Flowchart */
+html.theme-dark #mermaid .label{color:#ccc;}html.theme-dark #mermaid .cluster-label text{fill:#F9FFFE;}html.theme-dark #mermaid .cluster-label span{color:#F9FFFE;}html.theme-dark #mermaid .label text,html.theme-dark #mermaid span{fill:#ccc;color:#ccc;}html.theme-dark #mermaid .node rect,html.theme-dark #mermaid .node circle,html.theme-dark #mermaid .node ellipse,html.theme-dark #mermaid .node polygon,html.theme-dark #mermaid .node path{fill:#1f2020;stroke:#81B1DB;stroke-width:1px;}html.theme-dark #mermaid .node .label{text-align:center;}html.theme-dark #mermaid .node.clickable{cursor:pointer;}html.theme-dark #mermaid .arrowheadPath{fill:lightgrey;}html.theme-dark #mermaid .edgePath .path{stroke:lightgrey;stroke-width:2.0px;}html.theme-dark #mermaid .flowchart-link{stroke:lightgrey;fill:none;}html.theme-dark #mermaid .edgeLabel{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}html.theme-dark #mermaid .edgeLabel rect{opacity:0.5;background-color:hsl(0, 0%, 34.4117647059%);fill:hsl(0, 0%, 34.4117647059%);}html.theme-dark #mermaid .cluster rect{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:rgba(255, 255, 255, 0.25);stroke-width:1px;}html.theme-dark #mermaid .cluster text{fill:#F9FFFE;}html.theme-dark #mermaid .cluster span{color:#F9FFFE;}html.theme-dark #mermaid div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;background:hsl(20, 1.5873015873%, 12.3529411765%);border:1px solid rgba(255, 255, 255, 0.25);border-radius:2px;pointer-events:none;z-index:100;}html.theme-dark #mermaid :root{--mermaid-}
+/** Sequence diagram */
+html.theme-dark #mermaid .actor{stroke:#81B1DB;fill:#1f2020;}html.theme-dark #mermaid text.actor>tspan{fill:lightgrey;stroke:none;}html.theme-dark #mermaid .actor-line{stroke:lightgrey;}html.theme-dark #mermaid .messageLine0{stroke-width:1.5;stroke-dasharray:none;stroke:lightgrey;}html.theme-dark #mermaid .messageLine1{stroke-width:1.5;stroke-dasharray:2,2;stroke:lightgrey;}html.theme-dark #mermaid #arrowhead path{fill:lightgrey;stroke:lightgrey;}html.theme-dark #mermaid .sequenceNumber{fill:black;}html.theme-dark #mermaid #sequencenumber{fill:lightgrey;}html.theme-dark #mermaid #crosshead path{fill:lightgrey;stroke:lightgrey;}html.theme-dark #mermaid .messageText{fill:lightgrey;stroke:none;}html.theme-dark #mermaid .labelBox{stroke:#81B1DB;fill:#1f2020;}html.theme-dark #mermaid .labelText,html.theme-dark #mermaid .labelText>tspan{fill:lightgrey;stroke:none;}html.theme-dark #mermaid .loopText,html.theme-dark #mermaid .loopText>tspan{fill:lightgrey;stroke:none;}html.theme-dark #mermaid .loopLine{stroke-width:2px;stroke-dasharray:2,2;stroke:#81B1DB;fill:#81B1DB;}html.theme-dark #mermaid .note{stroke:hsl(180, 0%, 18.3529411765%);fill:hsl(180, 1.5873015873%, 28.3529411765%);}html.theme-dark #mermaid .noteText,html.theme-dark #mermaid .noteText>tspan{fill:rgb(183.8476190475, 181.5523809523, 181.5523809523);stroke:none;}html.theme-dark #mermaid .activation0{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#81B1DB;}html.theme-dark #mermaid .activation1{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#81B1DB;}html.theme-dark #mermaid .activation2{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:#81B1DB;}html.theme-dark #mermaid .actorPopupMenu{position:absolute;}html.theme-dark #mermaid .actorPopupMenuPanel{position:absolute;fill:#1f2020;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);filter:drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));}html.theme-dark #mermaid .actor-man line{stroke:#81B1DB;fill:#1f2020;}html.theme-dark #mermaid .actor-man circle,html.theme-dark #mermaid line{stroke:#81B1DB;fill:#1f2020;stroke-width:2px;}html.theme-dark #mermaid :root{--mermaid-}
+/** Gantt */
+html.theme-dark #mermaid .exclude-range{fill:#444;}html.theme-dark #mermaid .section{stroke:none;opacity:0.2;}html.theme-dark #mermaid .section0{fill:hsl(52.9411764706, 28.813559322%, 58.431372549%);}html.theme-dark #mermaid .section2{fill:#EAE8D9;}html.theme-dark #mermaid .section1,html.theme-dark #mermaid .section3{fill:#333;opacity:0.2;}html.theme-dark #mermaid .sectionTitle0{fill:#F9FFFE;}html.theme-dark #mermaid .sectionTitle1{fill:#F9FFFE;}html.theme-dark #mermaid .sectionTitle2{fill:#F9FFFE;}html.theme-dark #mermaid .sectionTitle3{fill:#F9FFFE;}html.theme-dark #mermaid .sectionTitle{text-anchor:start;}html.theme-dark #mermaid .grid .tick{stroke:lightgrey;opacity:0.8;shape-rendering:crispEdges;}html.theme-dark #mermaid .grid .tick text{fill:#ccc;}html.theme-dark #mermaid .grid path{stroke-width:0;}html.theme-dark #mermaid .today{fill:none;stroke:#DB5757;stroke-width:2px;}html.theme-dark #mermaid .task{stroke-width:2;}html.theme-dark #mermaid .taskText{text-anchor:middle;}html.theme-dark #mermaid .taskTextOutsideRight{fill:hsl(28.5714285714, 17.3553719008%, 86.2745098039%);text-anchor:start;}html.theme-dark #mermaid .taskTextOutsideLeft{fill:hsl(28.5714285714, 17.3553719008%, 86.2745098039%);text-anchor:end;}html.theme-dark #mermaid .task.clickable{cursor:pointer;}html.theme-dark #mermaid .taskText.clickable{cursor:pointer;fill:#003163!important;font-weight:bold;}html.theme-dark #mermaid .taskTextOutsideLeft.clickable{cursor:pointer;fill:#003163!important;font-weight:bold;}html.theme-dark #mermaid .taskTextOutsideRight.clickable{cursor:pointer;fill:#003163!important;font-weight:bold;}html.theme-dark #mermaid .taskText0,html.theme-dark #mermaid .taskText1,html.theme-dark #mermaid .taskText2,html.theme-dark #mermaid .taskText3{fill:hsl(28.5714285714, 17.3553719008%, 86.2745098039%);}html.theme-dark #mermaid .task0,html.theme-dark #mermaid .task1,html.theme-dark #mermaid .task2,html.theme-dark #mermaid .task3{fill:hsl(180, 1.5873015873%, 35.3529411765%);stroke:#ffffff;}html.theme-dark #mermaid .taskTextOutside0,html.theme-dark #mermaid .taskTextOutside2{fill:lightgrey;}html.theme-dark #mermaid .taskTextOutside1,html.theme-dark #mermaid .taskTextOutside3{fill:lightgrey;}html.theme-dark #mermaid .active0,html.theme-dark #mermaid .active1,html.theme-dark #mermaid .active2,html.theme-dark #mermaid .active3{fill:#81B1DB;stroke:#ffffff;}html.theme-dark #mermaid .activeText0,html.theme-dark #mermaid .activeText1,html.theme-dark #mermaid .activeText2,html.theme-dark #mermaid .activeText3{fill:hsl(28.5714285714, 17.3553719008%, 86.2745098039%)!important;}html.theme-dark #mermaid .done0,html.theme-dark #mermaid .done1,html.theme-dark #mermaid .done2,html.theme-dark #mermaid .done3{stroke:grey;fill:lightgrey;stroke-width:2;}html.theme-dark #mermaid .doneText0,html.theme-dark #mermaid .doneText1,html.theme-dark #mermaid .doneText2,html.theme-dark #mermaid .doneText3{fill:hsl(28.5714285714, 17.3553719008%, 86.2745098039%)!important;}html.theme-dark #mermaid .crit0,html.theme-dark #mermaid .crit1,html.theme-dark #mermaid .crit2,html.theme-dark #mermaid .crit3{stroke:#E83737;fill:#E83737;stroke-width:2;}html.theme-dark #mermaid .activeCrit0,html.theme-dark #mermaid .activeCrit1,html.theme-dark #mermaid .activeCrit2,html.theme-dark #mermaid .activeCrit3{stroke:#E83737;fill:#81B1DB;stroke-width:2;}html.theme-dark #mermaid .doneCrit0,html.theme-dark #mermaid .doneCrit1,html.theme-dark #mermaid .doneCrit2,html.theme-dark #mermaid .doneCrit3{stroke:#E83737;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges;}html.theme-dark #mermaid .milestone{transform:rotate(45deg) scale(0.8,0.8);}html.theme-dark #mermaid .milestoneText{font-style:italic;}html.theme-dark #mermaid .doneCritText0,html.theme-dark #mermaid .doneCritText1,html.theme-dark #mermaid .doneCritText2,html.theme-dark #mermaid .doneCritText3{fill:hsl(28.5714285714, 17.3553719008%, 86.2745098039%)!important;}html.theme-dark #mermaid .activeCritText0,html.theme-dark #mermaid .activeCritText1,html.theme-dark #mermaid .activeCritText2,html.theme-dark #mermaid .activeCritText3{fill:hsl(28.5714285714, 17.3553719008%, 86.2745098039%)!important;}html.theme-dark #mermaid .titleText{text-anchor:middle;fill:#ccc;}html.theme-dark #mermaid :root{--mermaid-}
+/** Class diagram */
+html.theme-dark #mermaid g.classGroup text{fill:#e0dfdf;stroke:none;}html.theme-dark #mermaid g.classGroup text .title{font-weight:bolder;}html.theme-dark #mermaid .nodeLabel,html.theme-dark #mermaid .edgeLabel{color:#e0dfdf;}html.theme-dark #mermaid .edgeLabel .label rect{fill:#1f2020;}html.theme-dark #mermaid .label text{fill:#e0dfdf;}html.theme-dark #mermaid .edgeLabel .label span{background:#1f2020;}html.theme-dark #mermaid .classTitle{font-weight:bolder;}html.theme-dark #mermaid .node rect,html.theme-dark #mermaid .node circle,html.theme-dark #mermaid .node ellipse,html.theme-dark #mermaid .node polygon,html.theme-dark #mermaid .node path{fill:#1f2020;stroke:#81B1DB;stroke-width:1px;}html.theme-dark #mermaid .divider{stroke:#81B1DB;stroke:1;}html.theme-dark #mermaid g.clickable{cursor:pointer;}html.theme-dark #mermaid g.classGroup rect{fill:#1f2020;stroke:#81B1DB;}html.theme-dark #mermaid g.classGroup line{stroke:#81B1DB;stroke-width:1;}html.theme-dark #mermaid .classLabel .box{stroke:none;stroke-width:0;fill:#1f2020;opacity:0.5;}html.theme-dark #mermaid .classLabel .label{fill:#81B1DB;}html.theme-dark #mermaid .relation{stroke:lightgrey;stroke-width:1;fill:none;}html.theme-dark #mermaid .dashed-line{stroke-dasharray:3;}html.theme-dark #mermaid #compositionStart,html.theme-dark #mermaid .composition{fill:lightgrey!important;stroke:lightgrey!important;stroke-width:1;}html.theme-dark #mermaid #compositionEnd,html.theme-dark #mermaid .composition{fill:lightgrey!important;stroke:lightgrey!important;stroke-width:1;}html.theme-dark #mermaid #dependencyStart,html.theme-dark #mermaid .dependency{fill:lightgrey!important;stroke:lightgrey!important;stroke-width:1;}html.theme-dark #mermaid #dependencyStart,html.theme-dark #mermaid .dependency{fill:lightgrey!important;stroke:lightgrey!important;stroke-width:1;}html.theme-dark #mermaid #extensionStart,html.theme-dark #mermaid .extension{fill:lightgrey!important;stroke:lightgrey!important;stroke-width:1;}html.theme-dark #mermaid #extensionEnd,html.theme-dark #mermaid .extension{fill:lightgrey!important;stroke:lightgrey!important;stroke-width:1;}html.theme-dark #mermaid #aggregationStart,html.theme-dark #mermaid .aggregation{fill:#1f2020!important;stroke:lightgrey!important;stroke-width:1;}html.theme-dark #mermaid #aggregationEnd,html.theme-dark #mermaid .aggregation{fill:#1f2020!important;stroke:lightgrey!important;stroke-width:1;}html.theme-dark #mermaid #lollipopStart,html.theme-dark #mermaid .lollipop{fill:#1f2020!important;stroke:lightgrey!important;stroke-width:1;}html.theme-dark #mermaid #lollipopEnd,html.theme-dark #mermaid .lollipop{fill:#1f2020!important;stroke:lightgrey!important;stroke-width:1;}html.theme-dark #mermaid .edgeTerminals{}html.theme-dark #mermaid :root{--mermaid-}
+/** Git graph */
+html.theme-dark #mermaid .commit-id,html.theme-dark #mermaid .commit-msg,html.theme-dark #mermaid .branch-label{fill:lightgrey;color:lightgrey;}html.theme-dark #mermaid .branch-label0{fill:undefined;}html.theme-dark #mermaid .commit0{stroke:hsl(180, 1.5873015873%, 48.3529411765%);fill:hsl(180, 1.5873015873%, 48.3529411765%);}html.theme-dark #mermaid .commit-highlight0{stroke:rgb(133.6571428571, 129.7428571428, 129.7428571428);fill:rgb(133.6571428571, 129.7428571428, 129.7428571428);}html.theme-dark #mermaid .label0{fill:hsl(180, 1.5873015873%, 48.3529411765%);}html.theme-dark #mermaid .arrow0{stroke:hsl(180, 1.5873015873%, 48.3529411765%);}html.theme-dark #mermaid .branch-label1{fill:undefined;}html.theme-dark #mermaid .commit1{stroke:hsl(321.6393442623, 65.5913978495%, 38.2352941176%);fill:hsl(321.6393442623, 65.5913978495%, 38.2352941176%);}html.theme-dark #mermaid .commit-highlight1{stroke:rgb(93.5483870969, 221.4516129033, 139.677419355);fill:rgb(93.5483870969, 221.4516129033, 139.677419355);}html.theme-dark #mermaid .label1{fill:hsl(321.6393442623, 65.5913978495%, 38.2352941176%);}html.theme-dark #mermaid .arrow1{stroke:hsl(321.6393442623, 65.5913978495%, 38.2352941176%);}html.theme-dark #mermaid .branch-label2{fill:undefined;}html.theme-dark #mermaid .commit2{stroke:hsl(194.4, 16.5562913907%, 49.6078431373%);fill:hsl(194.4, 16.5562913907%, 49.6078431373%);}html.theme-dark #mermaid .commit-highlight2{stroke:rgb(149.4437086091, 117.6092715231, 107.5562913906);fill:rgb(149.4437086091, 117.6092715231, 107.5562913906);}html.theme-dark #mermaid .label2{fill:hsl(194.4, 16.5562913907%, 49.6078431373%);}html.theme-dark #mermaid .arrow2{stroke:hsl(194.4, 16.5562913907%, 49.6078431373%);}html.theme-dark #mermaid .branch-label3{fill:undefined;}html.theme-dark #mermaid .commit3{stroke:hsl(23.0769230769, 49.0566037736%, 40.7843137255%);fill:hsl(23.0769230769, 49.0566037736%, 40.7843137255%);}html.theme-dark #mermaid .commit-highlight3{stroke:rgb(99.9811320754, 162.7735849057, 202.0188679245);fill:rgb(99.9811320754, 162.7735849057, 202.0188679245);}html.theme-dark #mermaid .label3{fill:hsl(23.0769230769, 49.0566037736%, 40.7843137255%);}html.theme-dark #mermaid .arrow3{stroke:hsl(23.0769230769, 49.0566037736%, 40.7843137255%);}html.theme-dark #mermaid .branch-label4{fill:undefined;}html.theme-dark #mermaid .commit4{stroke:hsl(0, 83.3333333333%, 43.5294117647%);fill:hsl(0, 83.3333333333%, 43.5294117647%);}html.theme-dark #mermaid .commit-highlight4{stroke:rgb(51.5000000001, 236.5, 236.5);fill:rgb(51.5000000001, 236.5, 236.5);}html.theme-dark #mermaid .label4{fill:hsl(0, 83.3333333333%, 43.5294117647%);}html.theme-dark #mermaid .arrow4{stroke:hsl(0, 83.3333333333%, 43.5294117647%);}html.theme-dark #mermaid .branch-label5{fill:undefined;}html.theme-dark #mermaid .commit5{stroke:hsl(289.1666666667, 100%, 24.1176470588%);fill:hsl(289.1666666667, 100%, 24.1176470588%);}html.theme-dark #mermaid .commit-highlight5{stroke:rgb(154.2083333334, 255, 132.0000000001);fill:rgb(154.2083333334, 255, 132.0000000001);}html.theme-dark #mermaid .label5{fill:hsl(289.1666666667, 100%, 24.1176470588%);}html.theme-dark #mermaid .arrow5{stroke:hsl(289.1666666667, 100%, 24.1176470588%);}html.theme-dark #mermaid .branch-label6{fill:undefined;}html.theme-dark #mermaid .commit6{stroke:hsl(35.1315789474, 98.7012987013%, 40.1960784314%);fill:hsl(35.1315789474, 98.7012987013%, 40.1960784314%);}html.theme-dark #mermaid .commit-highlight6{stroke:rgb(51.331168831, 135.1948051946, 253.6688311688);fill:rgb(51.331168831, 135.1948051946, 253.6688311688);}html.theme-dark #mermaid .label6{fill:hsl(35.1315789474, 98.7012987013%, 40.1960784314%);}html.theme-dark #mermaid .arrow6{stroke:hsl(35.1315789474, 98.7012987013%, 40.1960784314%);}html.theme-dark #mermaid .branch-label7{fill:undefined;}html.theme-dark #mermaid .commit7{stroke:hsl(106.1538461538, 84.4155844156%, 35.0980392157%);fill:hsl(106.1538461538, 84.4155844156%, 35.0980392157%);}html.theme-dark #mermaid .commit-highlight7{stroke:rgb(206.1818181817, 89.948051948, 241.051948052);fill:rgb(206.1818181817, 89.948051948, 241.051948052);}html.theme-dark #mermaid .label7{fill:hsl(106.1538461538, 84.4155844156%, 35.0980392157%);}html.theme-dark #mermaid .arrow7{stroke:hsl(106.1538461538, 84.4155844156%, 35.0980392157%);}html.theme-dark #mermaid .branch{stroke-width:1;stroke:lightgrey;stroke-dasharray:2;}html.theme-dark #mermaid .commit-label{fill:rgb(183.8476190475, 181.5523809523, 181.5523809523);}html.theme-dark #mermaid .commit-label-bkg{fill:hsl(180, 1.5873015873%, 28.3529411765%);opacity:0.5;}html.theme-dark #mermaid .tag-label{fill:#e0dfdf;}html.theme-dark #mermaid .tag-label-bkg{fill:#1f2020;stroke:#cccccc;}html.theme-dark #mermaid .tag-hole{fill:#ccc;}html.theme-dark #mermaid .commit-merge{stroke:#1f2020;fill:#1f2020;}html.theme-dark #mermaid .commit-reverse{stroke:#1f2020;fill:#1f2020;stroke-width:3;}html.theme-dark #mermaid .commit-highlight-inner{stroke:#1f2020;fill:#1f2020;}html.theme-dark #mermaid .arrow{stroke-width:8;stroke-linecap:round;fill:none;}:root{--mermaid-}
+/** Entity relationship */
+html.theme-dark #mermaid .entityBox{fill:#1f2020;stroke:#81B1DB;}html.theme-dark #mermaid .attributeBoxOdd{fill:hsl(0, 0%, 32%);stroke:#81B1DB;}html.theme-dark #mermaid .attributeBoxEven{fill:hsl(0, 0%, 22%);stroke:#81B1DB;}html.theme-dark #mermaid .relationshipLabelBox{fill:hsl(20, 1.5873015873%, 12.3529411765%);opacity:0.7;background-color:hsl(20, 1.5873015873%, 12.3529411765%);}html.theme-dark #mermaid .relationshipLabelBox rect{opacity:0.5;}html.theme-dark #mermaid .relationshipLine{stroke:lightgrey;}html.theme-dark #mermaid :root{--mermaid-}
+/** Journey */
+html.theme-dark #mermaid .label{color:#ccc;}html.theme-dark #mermaid .mouth{stroke:#666;}html.theme-dark #mermaid line{stroke:#ccc;}html.theme-dark #mermaid .legend{fill:#ccc;}html.theme-dark #mermaid .label text{fill:#333;}html.theme-dark #mermaid .label{color:#ccc;}html.theme-dark #mermaid .face{fill:#FFF8DC;stroke:#999;}html.theme-dark #mermaid .node rect,html.theme-dark #mermaid .node circle,html.theme-dark #mermaid .node ellipse,html.theme-dark #mermaid .node polygon,html.theme-dark #mermaid .node path{fill:#1f2020;stroke:#81B1DB;stroke-width:1px;}html.theme-dark #mermaid .node .label{text-align:center;}html.theme-dark #mermaid .node.clickable{cursor:pointer;}html.theme-dark #mermaid .arrowheadPath{fill:lightgrey;}html.theme-dark #mermaid .edgePath .path{stroke:lightgrey;stroke-width:1.5px;}html.theme-dark #mermaid .flowchart-link{stroke:lightgrey;fill:none;}html.theme-dark #mermaid .edgeLabel{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}html.theme-dark #mermaid .edgeLabel rect{opacity:0.5;}html.theme-dark #mermaid .cluster text{fill:#F9FFFE;}html.theme-dark #mermaid div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;background:hsl(20, 1.5873015873%, 12.3529411765%);border:1px solid rgba(255, 255, 255, 0.25);border-radius:2px;pointer-events:none;z-index:100;}html.theme-dark #mermaid .task-type-0,html.theme-dark #mermaid .section-type-0{fill:#1f2020;}html.theme-dark #mermaid .task-type-1,html.theme-dark #mermaid .section-type-1{fill:hsl(180, 1.5873015873%, 28.3529411765%);}html.theme-dark #mermaid .task-type-2,html.theme-dark #mermaid .section-type-2{fill:hsl(244, 1.5873015873%, 12.3529411765%);}html.theme-dark #mermaid .task-type-3,html.theme-dark #mermaid .section-type-3{fill:hsl(244, 1.5873015873%, 28.3529411765%);}html.theme-dark #mermaid .task-type-4,html.theme-dark #mermaid .section-type-4{fill:hsl(116, 1.5873015873%, 12.3529411765%);}html.theme-dark #mermaid .task-type-5,html.theme-dark #mermaid .section-type-5{fill:hsl(116, 1.5873015873%, 28.3529411765%);}html.theme-dark #mermaid .task-type-6,html.theme-dark #mermaid .section-type-6{fill:hsl(308, 1.5873015873%, 12.3529411765%);}html.theme-dark #mermaid .task-type-7,html.theme-dark #mermaid .section-type-7{fill:hsl(308, 1.5873015873%, 28.3529411765%);}html.theme-dark #mermaid :root{--mermaid-}
+/** State diagram */
+html.theme-dark #mermaid defs #statediagram-barbEnd{fill:lightgrey;stroke:lightgrey;}html.theme-dark #mermaid g.stateGroup text{fill:#81B1DB;stroke:none;}html.theme-dark #mermaid g.stateGroup text{fill:#ccc;stroke:none;}html.theme-dark #mermaid g.stateGroup .state-title{font-weight:bolder;fill:#e0dfdf;}html.theme-dark #mermaid g.stateGroup rect{fill:#1f2020;stroke:#81B1DB;}html.theme-dark #mermaid g.stateGroup line{stroke:lightgrey;stroke-width:1;}html.theme-dark #mermaid .transition{stroke:lightgrey;stroke-width:1;fill:none;}html.theme-dark #mermaid .stateGroup .composit{fill:#333;border-bottom:1px;}html.theme-dark #mermaid .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}html.theme-dark #mermaid .state-note{stroke:hsl(180, 0%, 18.3529411765%);fill:hsl(180, 1.5873015873%, 28.3529411765%);}html.theme-dark #mermaid .state-note text{fill:rgb(183.8476190475, 181.5523809523, 181.5523809523);stroke:none;}html.theme-dark #mermaid .stateLabel .box{stroke:none;stroke-width:0;fill:#1f2020;opacity:0.5;}html.theme-dark #mermaid .edgeLabel .label rect{fill:#1f2020;opacity:0.5;}html.theme-dark #mermaid .edgeLabel .label text{fill:#ccc;}html.theme-dark #mermaid .label div .edgeLabel{color:#ccc;}html.theme-dark #mermaid .stateLabel text{fill:#e0dfdf;font-weight:bold;}html.theme-dark #mermaid .node circle.state-start{fill:#f4f4f4;stroke:#f4f4f4;}html.theme-dark #mermaid .node .fork-join{fill:#f4f4f4;stroke:#f4f4f4;}html.theme-dark #mermaid .node circle.state-end{fill:#cccccc;stroke:#333;stroke-width:1.5;}html.theme-dark #mermaid .end-state-inner{fill:#333;stroke-width:1.5;}html.theme-dark #mermaid .node rect{fill:#1f2020;stroke:#81B1DB;stroke-width:1px;}html.theme-dark #mermaid .node polygon{fill:#1f2020;stroke:#81B1DB;stroke-width:1px;}html.theme-dark #mermaid #statediagram-barbEnd{fill:lightgrey;}html.theme-dark #mermaid .statediagram-cluster rect{fill:#1f2020;stroke:#81B1DB;stroke-width:1px;}html.theme-dark #mermaid .cluster-label,html.theme-dark #mermaid .nodeLabel{color:#e0dfdf;}html.theme-dark #mermaid .statediagram-cluster rect.outer{rx:5px;ry:5px;}html.theme-dark #mermaid .statediagram-state .divider{stroke:#81B1DB;}html.theme-dark #mermaid .statediagram-state .title-state{rx:5px;ry:5px;}html.theme-dark #mermaid .statediagram-cluster.statediagram-cluster .inner{fill:#333;}html.theme-dark #mermaid .statediagram-cluster.statediagram-cluster-alt .inner{fill:#555;}html.theme-dark #mermaid .statediagram-cluster .inner{rx:0;ry:0;}html.theme-dark #mermaid .statediagram-state rect.basic{rx:5px;ry:5px;}html.theme-dark #mermaid .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#555;}html.theme-dark #mermaid .note-edge{stroke-dasharray:5;}html.theme-dark #mermaid .statediagram-note rect{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:hsl(180, 0%, 18.3529411765%);stroke-width:1px;rx:0;ry:0;}html.theme-dark #mermaid .statediagram-note rect{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:hsl(180, 0%, 18.3529411765%);stroke-width:1px;rx:0;ry:0;}html.theme-dark #mermaid .statediagram-note text{fill:rgb(183.8476190475, 181.5523809523, 181.5523809523);}html.theme-dark #mermaid .statediagram-note .nodeLabel{color:rgb(183.8476190475, 181.5523809523, 181.5523809523);}html.theme-dark #mermaid .statediagram .edgeLabel{color:red;}html.theme-dark #mermaid #dependencyStart,html.theme-dark #mermaid #dependencyEnd{fill:lightgrey;stroke:lightgrey;stroke-width:1;}html.theme-dark #mermaid :root{--mermaid-}
+/** Pie chart */
+html.theme-dark #mermaid .pieCircle{filter: brightness(0.7);} html.theme-dark #mermaid[aria-roledescription=pie] .legend rect { filter: brightness(0.7); } html.theme-dark #mermaid .pieTitleText{text-anchor:middle;fill:hsl(28.5714285714, 17.3553719008%, 86.2745098039%);}html.theme-dark #mermaid .slice{fill:#222;}html.theme-dark #mermaid .legend text{fill:hsl(28.5714285714, 17.3553719008%, 86.2745098039%);}html.theme-dark #mermaid :root{--mermaid-}
+/** Requirements */
+html.theme-dark #mermaid marker{fill:lightgrey;stroke:lightgrey;}html.theme-dark #mermaid marker.cross{stroke:lightgrey;}html.theme-dark #mermaid svg{}html.theme-dark #mermaid .reqBox{fill:#1f2020;fill-opacity:100%;stroke:#cccccc;stroke-width:#cccccc;}html.theme-dark #mermaid .reqTitle,html.theme-dark #mermaid .reqLabel{fill:#e0dfdf;}html.theme-dark #mermaid .reqLabelBox{fill:hsl(180, 1.5873015873%, 28.3529411765%);fill-opacity:100%;}html.theme-dark #mermaid .req-title-line{stroke:#cccccc;stroke-width:#cccccc;}html.theme-dark #mermaid .relationshipLine{stroke:lightgrey;stroke-width:1;}html.theme-dark #mermaid .relationshipLabel{fill:lightgrey;}html.theme-dark #mermaid :root{--mermaid-}
+/** C4 system */
+html.theme-dark #mermaid .person{stroke:calculated;fill:calculated;} html.theme-dark #mermaid[aria-roledescription=c4] rect {stroke: #ddd;} html.theme-dark #mermaid[aria-roledescription=c4] text {fill:#eee;}
+/** Mind map */
+html.theme-dark #mermaid .section-root.mindmap-node { fill: #ccc; } html.theme-dark #mermaid .section-root.mindmap-node text { fill: black; }
+html.theme-dark #mermaid .mindmap-edges path, html.theme-dark #mermaid .mindmap-node { filter: hue-rotate(180deg) invert(0.9); }
+/** Timeline */
+html.theme-dark #mermaid .timeline text tspan { fill: #eee; } html.theme-dark #mermaid .timeline-node path { fill: #222; }
+
+        
+
+        .note {
+            background: rgba(77, 187, 95, .2);
+        }
+        
+
+        .prism {
+            page-break-inside: avoid;
+        }
+        
+        /* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apex+apl+applescript+aql+arduino+arff+armasm+arturo+asciidoc+aspnet+asm6502+asmatmel+autohotkey+autoit+avisynth+avro-idl+awk+bash+basic+batch+bbcode+bbj+bicep+birb+bison+bnf+bqn+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cfscript+chaiscript+cil+cilkc+cilkcpp+clojure+cmake+cobol+coffeescript+concurnas+csp+cooklang+coq+crystal+css-extras+csv+cue+cypher+d+dart+dataweave+dax+dhall+diff+django+dns-zone-file+docker+dot+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+false+firestore-security-rules+flow+fortran+ftl+gml+gap+gcode+gdscript+gedcom+gettext+gherkin+git+glsl+gn+linker-script+go+go-module+gradle+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+hoon+http+hpkp+hsts+ichigojam+icon+icu-message-format+idris+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jexl+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keepalived+keyman+kotlin+kumir+kusto+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+log+lolcode+lua+magma+makefile+markdown+markup-templating+mata+matlab+maxscript+mel+mermaid+metafont+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nevod+nginx+nim+nix+nsis+objectivec+ocaml+odin+opencl+openqasm+oz+parigp+parser+pascal+pascaligo+psl+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plant-uml+plsql+powerquery+powershell+processing+prolog+promql+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+qsharp+q+qml+qore+r+racket+cshtml+jsx+tsx+reason+regex+rego+renpy+rescript+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+squirrel+stan+stata+iecst+stylus+supercollider+swift+systemd+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+tremor+turtle+twig+typescript+typoscript+unrealscript+uorazor+uri+v+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+web-idl+wgsl+wiki+wolfram+wren+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=highlight-keywords */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre-wrap;word-spacing:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:16px;margin:0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+
+        
+
+        .procedure-steps {
+            box-sizing: border-box;
+            padding: 8px 8px 2px 8px;
+        }
+        
+        .procedure-steps ol {
+            margin-block-end: 0;
+            margin-block-start: 0;
+        }
+        
+
+        .prompt {
+            flex-direction: row;
+            letter-spacing: .0015em;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+
+        .prompt-content {
+            padding: 15px;
+            overflow: hidden;
+            flex: 1 1 auto;
+        }
+        
+
+        .prompt-content-p p {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+
+        .prompt-icon {
+            flex: 0 0 auto;
+            margin-left: 15px;
+            margin-top: 15px;
+            fill: currentcolor;
+            width: 24px;
+            height: 24px;
+        }
+        
+
+        :root {
+            width: 95%;
+            max-width: 95vw;
+            padding: 0 0 0 30px;
+        }
+        
+        body {
+            font-family: JetBrains Sans,serif;
+        }
+        
+        a {
+            overflow-wrap: anywhere;
+            width: 100vw;
+        }
+        
+        
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff) format("woff");
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff) format("woff");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff) format("woff");
+            font-weight: 600;
+            font-style: normal;
+        }
+        
+        
+        code {
+            display: inline;
+            word-break: break-word;
+            font-size: 15px;
+            line-height: inherit;
+            font-variant-ligatures: none;
+            font-family: JetBrains Sans,monospace;
+            white-space: pre-line;
+            overflow-wrap: break-word;
+        }
+        
+        figcaption {
+            margin-top: 5px;
+        }
+        
+        h2 {
+            padding-top: 16px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        h3 {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        h4 {
+            padding-top: 4px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        p {
+            padding: 0;
+            border: 0;
+            line-height: 25px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-bottom: 8px;
+        }
+        
+        div {
+            display: block;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            page-break-inside: avoid;
+        }
+        
+        th, td {
+            border: 1px solid #c4c4c4;
+            padding: 10px;
+            text-align: left;
+            word-break: break-all;
+        }
+        
+        .entry {
+            display: grid;
+            grid-template-columns: auto max-content;
+            grid-template-areas: "chapter page";
+            align-items: end;
+            gap: 0 .25rem;
+            line-height: 25px;
+        }
+        
+        .toc-link-container{
+            grid-area: chapter;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .toc-link{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .toc-link-container::after {
+            position: absolute;
+            padding-left: .25ch;
+            content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+            text-align: right;
+        }
+        
+        .page {
+            grid-area: page;
+            width: 30px;
+            text-align: right;
+        }
+        
+
+        .secondary-title {
+            font-size: 20px;
+            margin-inline-start: 0;
+            margin-block-end: 0;
+            margin-block-start: 0;
+        }
+        
+
+        .tip {
+            background-color: rgba(25, 25, 28, .05);
+        }
+        
+
+        .top-bottom-bordered-element {
+            padding-top: 40px;
+            overflow: hidden;
+        }
+        
+
+        .topic {
+            page-break-before: always;
+        }
+        
+
+        .warning {
+            background: rgba(244, 92, 74, .2);
+        }
+        </style></head><body><div><section class="topic"><div><article class="article"><h1 class="main-title">Table of contents</h1><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-1897185137">Tema1 MN</a></div><div class="page">2</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-1536611938">Detectia Anomaliilor</a></div><div class="page">4</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-2001626880">estimate_gaussian</a></div><div class="page">5</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#194574641">multivariate_gaussian</a></div><div class="page">7</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-499398176">optimal_threshold</a></div><div class="page">10</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-863100452">identify_outliers</a></div><div class="page">14</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#28484561">Kernel Regression</a></div><div class="page">16</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-1900884469">kernel_functions</a></div><div class="page">18</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#1515092092">build_kernel</a></div><div class="page">20</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#1831332510">cholesky</a></div><div class="page">22</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#683919917">get_lower_inverse</a></div><div class="page">24</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#61004166">get_prediction_params</a></div><div class="page">26</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#1558111000">get_prediction_params_iter</a></div><div class="page">28</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#1288435909">split_dataset</a></div><div class="page">31</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#5189503">Markov Text Generation</a></div><div class="page">33</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#1514680472">distinct_words</a></div><div class="page">35</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-1186563481">k_secv</a></div><div class="page">36</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-694017448">distinct_k_secv</a></div><div class="page">38</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#27213178">word_idx</a></div><div class="page">39</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#1664809559">k_secv_idx</a></div><div class="page">41</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#755568165">stochastic_matrix</a></div><div class="page">43</div></div></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-1897185137">Tema1 MN</h1><div class="container"><figure class="image-container"><img class="center bordered-element image" id="-1897185137#-ur8gjc_1236" alt="MN team" title="MN team" src="//wsl.localhost/Ubuntu-20.04/home/ap0/mn_hw/Writerside/images/numericalmethods.png" width="290" height="181"><figcaption class="center-text">MN team</figcaption></figure></div><section><h2 id="-1897185137#motivatia-temei" data-toc="motivatia-temei#starter.md-motivatia-temei">Motivatia temei</h2><p id="-1897185137#-ur8gjc_1238">Prima temă de casă la Metode Numerice vizează următoarele obiective:</p><ul class="list" id="-1897185137#-ur8gjc_1239" start="1"><li class="list-item" id="-1897185137#-ur8gjc_1240"><p>Familiarizarea cu mediul de programare GNU Octave și facilitățile oferite de acesta;</p></li><li class="list-item" id="-1897185137#-ur8gjc_1241"><p>Folosirea matricelor și a sistemelor de ecuații liniare pentru a modela probleme reale, &icirc;nt&acirc;lnite &icirc;n viața de zi cu zi, precum lanțurile Markov;</p></li><li class="list-item" id="-1897185137#-ur8gjc_1242"><p>Introducerea &icirc;n &icirc;nvățarea supervizată.</p></li></ul></section><section><h2 id="-1897185137#contents" data-toc="contents#starter.md-contents">Contents</h2><ul class="list" id="-1897185137#-ur8gjc_1243" start="1"><li class="list-item" id="-1897185137#-ur8gjc_1244"><p><span class="control" id="-1897185137#-ur8gjc_1245">Task 1</span>: Detecția anomaliilor (<a href="#-1536611938">Detectia Anomaliilor</a>)</p></li><li class="list-item" id="-1897185137#-ur8gjc_1247"><p><span class="control" id="-1897185137#-ur8gjc_1248">Task 2</span>: Kernel Regression (<a href="#28484561">Kernel Regression</a>)</p></li><li class="list-item" id="-1897185137#-ur8gjc_1250"><p><span class="control" id="-1897185137#-ur8gjc_1251">Task 3</span>: Markov Text Generation (<a href="#5189503">Markov Text Generation</a>)</p></li></ul></section><section><h2 id="-1897185137#checker-tema" data-toc="checker-tema#starter.md-checker-tema">Checker tema</h2><p id="-1897185137#-ur8gjc_1253">Modul de folosire al checkerului:</p><section class="procedure-steps bordered-element detached"><h3 id="-1897185137#inject-a-procedure">Homework check</h3><ol class="list list-decimal"><li class="list-item" id="-1897185137#-ur8gjc_1254"><p id="-1897185137#-ur8gjc_1256">Din folderul temei, se executa cu <span class="inline-code" id="-1897185137#-ur8gjc_1257">python3</span> fisierul <span class="inline-code" id="-1897185137#-ur8gjc_1258">checker.py</span>.</p><div class="container"><figure class="image-container"><img class="center bordered-element-rounded image image-size" id="-1897185137#-ur8gjc_1255" alt="completion suggestions for procedure" title="completion suggestions for procedure" src="//wsl.localhost/Ubuntu-20.04/home/ap0/mn_hw/Writerside/images/checker.png" width="592" height="70"><figcaption class="center-text">completion suggestions for procedure</figcaption></figure></div></li><li class="list-item" id="-1897185137#-ur8gjc_1259"><p id="-1897185137#-ur8gjc_1261">Se poate specifica ca argument si numarul taskului</p><div class="container"><figure class="image-container"><img class="center bordered-element-rounded image image-size" id="-1897185137#-ur8gjc_1260" alt="completion suggestions for procedure" title="completion suggestions for procedure" src="//wsl.localhost/Ubuntu-20.04/home/ap0/mn_hw/Writerside/images/checkert3.png" width="1084" height="345"><figcaption class="center-text">completion suggestions for procedure</figcaption></figure></div></li></ol></section></section><section><h2 id="-1897185137#author" data-toc="author#starter.md-author">Author</h2><section><h3 id="-1897185137#rares-andrei-sarmasag" data-toc="rares-andrei-sarmasag#starter.md-rares-andrei-sarmasag">Rares Andrei Sarmasag</h3><p id="-1897185137#-ur8gjc_1262"><span class="emphasis" id="-1897185137#-ur8gjc_1263">student at Polithenica Bucuresti - Faculty of Automatic Control and Computer Science</span></p><p id="-1897185137#-ur8gjc_1264">Seria CB-312 @ CTI 2024</p><p id="-1897185137#-ur8gjc_1265">contact email: rares.sarmasag@stud.acs.upb.ro (<a href="mailto:rares.sarmasag@stud.acs.upb.ro">mailto:rares.sarmasag@stud.acs.upb.ro</a>).</p><p id="-1897185137#-ur8gjc_1267">discord: _ap0</p></section></section><div class="top-bottom-bordered-element detached" id="-1897185137#-ur8gjc_1237"><h4 class="secondary-title">See also</h4><div class="category" id="-1897185137#-ur8gjc_1268"><h4 class="category-title">Tema1 MN documentation</h4><ol class="list-none category-link"><li class="category-item">My projects (<a href="https://github.com/rares9301?tab=repositories">https://github.com/rares9301?tab=repositories</a>)</li><li class="category-item">Github (<a href="https://github.com/rares9301">https://github.com/rares9301</a>)</li></ol></div></div></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-1536611938">Detectia Anomaliilor</h1><p id="-1536611938#-xr33pt_1219">Unul dintre primii pasi pe care trebuie sa ii faceti atunci cand vi se da un Training Data Set este sa detectati asa-zisele anomalii (outliers). Acest lucru poarta numele de Anomaly Detection si ajuta AI-ul caruia ii dati datele de training sa aiba un set de date consistent, fara greseli, si sa determine outlierii din datele de testing.</p><section><h2 id="-1536611938#functii" data-toc="functii#DetectiaAnomaliilor.md-functii">Functii</h2><p id="-1536611938#-xr33pt_1220">Au fost implementate urmatoarele functii:</p><dl id="-1536611938#-xr33pt_1221" date-style="title-top"><div class="def bordered-element detached"><dt id="-1536611938#-xr33pt_1222" class="definition-list-title">estimate_gaussian</dt><dd class="definition-list-description"><p id="-1536611938#-xr33pt_1224">determina media si varianta pentru o distributie normala multivariata</p></dd></div><div class="def bordered-element detached"><dt id="-1536611938#-xr33pt_1225" class="definition-list-title">multivariate_gaussian</dt><dd class="definition-list-description"><p id="-1536611938#-xr33pt_1227">calculeaza densitatea de probabilitate pentru distributia normala multivariata</p></dd></div><div class="def bordered-element detached"><dt id="-1536611938#-xr33pt_1228" class="definition-list-title">optimal_threshold</dt><dd class="definition-list-description"><p id="-1536611938#-xr33pt_1230">determina cel mai bun factor ϵ</p></dd></div><div class="def bordered-element detached"><dt id="-1536611938#-xr33pt_1231" class="definition-list-title">identify_outliers</dt><dd class="definition-list-description"><p id="-1536611938#-xr33pt_1233">determina outlierii ( probabilitatile mai mici decat epsilon)</p></dd></div></dl></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-2001626880">estimate_gaussian</h1><p id="-2001626880#nagg8l_721">Această funcție este folosită pentru a estima parametrii unei distribuții gaussiene (normale) pentru un set de date <span class="inline-code" id="-2001626880#nagg8l_723">X</span></p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="-2001626880#nagg8l_724"><span class="control" id="-2001626880#nagg8l_725">Functia nu depinde de alte functii</span></p></div>
+</blockquote><section><h2 id="-2001626880#implementare" data-toc="implementare#estimate-gaussian.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="-2001626880#nagg8l_727">function [mean_values, variances] = estimate_gaussian(X)</p></div>
+</blockquote><p id="-2001626880#nagg8l_728">Funcția estimate_gaussian va returna două valori: <span class="inline-code" id="-2001626880#nagg8l_729">mean_values</span> și <span class="inline-code" id="-2001626880#nagg8l_730">variances</span>, care sunt vectorii mediei și matricea de covarianță</p><ol class="list list-decimal" id="-2001626880#nagg8l_731" type="1" start="1"><li class="list-item" id="-2001626880#nagg8l_732"><p id="-2001626880#nagg8l_733">Calculul fiecarei caracteristici (coloane) din setul de date X. Rezultatul este un vector <span class="inline-code" id="-2001626880#nagg8l_734">mean_vales</span> care contine media pentru fiecare caracteristica.</p><div class="code-block detached" id="-2001626880#nagg8l_735"><pre><code class="language-csharp">mean_values = mean(X);</code></pre></div></li><li class="list-item" id="-2001626880#nagg8l_736"><p id="-2001626880#nagg8l_737">Calculul matriceai de covarianță a caracteristicilor din X. Elementele de pe diagonala principală a matricei reprezintă variantele fiecărei caracteristici.</p><div class="code-block detached" id="-2001626880#nagg8l_738"><pre><code class="language-csharp">variances = cov(X);</code></pre></div></li></ol></section><section><h2 id="-2001626880#cod-sursa" data-toc="cod-sursa#estimate-gaussian.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="-2001626880#nagg8l_739"><pre><code class="language-csharp">function [mean_values, variances] = estimate_gaussian(X)
+
+% Calculul mediei
+mean_values = mean(X);
+
+% Calculul matricei de varianta
+variances = cov(X);
+
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="194574641">multivariate_gaussian</h1><p id="194574641#-bxx75e_3617">Aceasta functie este folosita pentru a calcula probabilitățile unui set de date <span class="inline-code" id="194574641#-bxx75e_3620">X</span> sub o distribuție gaussiană multivariată, dată prin valorile medii <span class="inline-code" id="194574641#-bxx75e_3621">mean_values</span> și matricea de covarianță <span class="inline-code" id="194574641#-bxx75e_3622">variances</span>.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="194574641#-bxx75e_3623"><span class="control" id="194574641#-bxx75e_3624">Functia nu depinde de alte functii si este asemanatoare functiei <span class="inline-code" id="194574641#-bxx75e_3625">gaussian_distribution</span>. Pentru simplitate, voi explica doar functia <span class="inline-code" id="194574641#-bxx75e_3626">multivariate_gaussian</span></span></p></div>
+</blockquote><div class="container"><figure class="image-container"><img class="center bordered-element-rounded image" id="194574641#-bxx75e_3619" alt="multivariate_gaussian" title="multivariate_gaussian" src="//wsl.localhost/Ubuntu-20.04/home/ap0/mn_hw/Writerside/images/multivairate.png" width="330" height="237"><figcaption class="center-text">multivariate_gaussian</figcaption></figure></div><section><h2 id="194574641#implementare" data-toc="implementare#multivariate-gaussian.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="194574641#-bxx75e_3628">function probabilities = multivariate_gaussian(X, mean_values, variances)</p></div>
+</blockquote><p id="194574641#-bxx75e_3629">Funcția va returna un vector <span class="inline-code" id="194574641#-bxx75e_3630">probabilities</span> care conține probabilitățile pentru fiecare exemplu din <span class="inline-code" id="194574641#-bxx75e_3631">X</span>.</p><ol class="list list-decimal" id="194574641#-bxx75e_3632" type="1" start="1"><li class="list-item" id="194574641#-bxx75e_3633"><p id="194574641#-bxx75e_3634">obțin dimensiunea matricei <span class="inline-code" id="194574641#-bxx75e_3635">X</span>, unde m reprezintă numărul de exemple și n numărul de caracteristici.</p><div class="code-block detached" id="194574641#-bxx75e_3636"><pre><code class="language-csharp">[m, n] = size(X);</code></pre></div></li><li class="list-item" id="194574641#-bxx75e_3637"><p id="194574641#-bxx75e_3638">calculez diferența dintre fiecare exemplu din <span class="inline-code" id="194574641#-bxx75e_3639">X</span> și vectorul mediei <span class="inline-code" id="194574641#-bxx75e_3640">mean_values</span>.</p><div class="code-block detached" id="194574641#-bxx75e_3641"><pre><code class="language-csharp">difference = bsxfun(@minus, X, mean_values)</code></pre></div></li><li class="list-item" id="194574641#-bxx75e_3642"><p id="194574641#-bxx75e_3643">calculez inversa matricei de covarianță <span class="inline-code" id="194574641#-bxx75e_3644">variances</span>.</p><div class="code-block detached" id="194574641#-bxx75e_3645"><pre><code class="language-csharp">inverse_variance = inv(variances);</code></pre></div></li><li class="list-item" id="194574641#-bxx75e_3646"><p id="194574641#-bxx75e_3647">calculez determinantul matricei de covarianță <span class="inline-code" id="194574641#-bxx75e_3648">variances</span>.</p><div class="code-block detached" id="194574641#-bxx75e_3649"><pre><code class="language-csharp">determinant = det(variances);</code></pre></div></li><li class="list-item" id="194574641#-bxx75e_3650"><p id="194574641#-bxx75e_3651">calculez exponentul pentru funcția de densitate a probabilității, care este o parte esențială a ecuației pentru distribuția gaussiană multivariată.</p><div class="code-block detached" id="194574641#-bxx75e_3652"><pre><code class="language-csharp">exponent = -0.5 * sum((difference * inverse_variance) .* difference, 2);</code></pre></div></li><li class="list-item" id="194574641#-bxx75e_3653"><p id="194574641#-bxx75e_3654">calculez probabilitățile pentru fiecare exemplu din <span class="inline-code" id="194574641#-bxx75e_3655">X</span>, folosind formula pentru distribuția gaussiană multivariată.</p><div class="code-block detached" id="194574641#-bxx75e_3656"><pre><code class="language-csharp">probabilities = (1 / (sqrt((2 * pi)^n * determinant))) * exp(exponent);</code></pre></div></li></ol></section><section><h2 id="194574641#cod-sursa" data-toc="cod-sursa#multivariate-gaussian.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="194574641#-bxx75e_3657"><pre><code class="language-csharp">function probabilities = multivariate_gaussian(X, mean_values, variances)
+
+[m, n] = size(X); % matrix size
+difference = bsxfun(@minus, X, mean_values); % diff from mean
+inverse_variance = inv(variances); % inverse of matrix
+determinant = det(variances); % determinant
+
+% exponent
+exponent = -0.5 * sum((difference * inverse_variance) .* difference, 2);
+
+% probabilitati
+probabilities = (1 / (sqrt((2 * pi)^n * determinant))) * exp(exponent);
+
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-499398176">optimal_threshold</h1><p id="-499398176#i1640sj_6150">Funcția este concepută pentru a găsi valoarea optimă a pragului (epsilon) care maximizează scorul F1 &icirc;ntr-un context de clasificare binară.</p><blockquote class="prompt flex bordered-element-rounded warning detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="-499398176#i1640sj_6152"><span class="control" id="-499398176#i1640sj_6153">Functia apeleaza <span class="inline-code" id="-499398176#i1640sj_6154">check_predictions</span> si <span class="inline-code" id="-499398176#i1640sj_6155">metrics</span></span></p></div>
+</blockquote><section><h2 id="-499398176#prerequisites" data-toc="prerequisites#optimal-threshold.md-prerequisites">Prerequisites</h2><p id="-499398176#i1640sj_6156">Urmatoarele functii sunt necesare pentru rezolvarea task-ului:</p><ul class="list" id="-499398176#i1640sj_6157" start="1"><li class="list-item" id="-499398176#i1640sj_6158"><p id="-499398176#i1640sj_6159">check_predictions</p><div class="code-block detached" id="-499398176#i1640sj_6160"><pre><code class="language-csharp">function [false_positives, false_negatives, true_positives] = check_predictions(predictions, truths)
+
+   % false pozitives
+   false_positives = sum((predictions == 1) &amp; (truths == 0));
+
+   % false negatives
+   false_negatives = sum((predictions == 0) &amp; (truths == 1));
+
+   % true positives
+   true_positives = sum((predictions == 1) &amp; (truths == 1));
+
+   endfunction</code></pre></div></li><li class="list-item" id="-499398176#i1640sj_6161"><p id="-499398176#i1640sj_6162">metrics</p><div class="code-block detached" id="-499398176#i1640sj_6163"><pre><code class="language-csharp">function [precision, recall, F1] = metrics(true_positives, false_positives, false_negatives)
+    % precizie
+    precision = true_positives / (true_positives + false_positives);
+
+     % recall
+    recall = true_positives / (true_positives + false_negatives);
+
+    % F1 score
+    F1 = 2 * (precision * recall) / (precision + recall);
+ endfunction</code></pre></div></li></ul></section><section><h2 id="-499398176#implementare" data-toc="implementare#optimal-threshold.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="-499398176#i1640sj_6165">function [best_epsilon, best_F1, associated_precision, associated_recall] = optimal_threshold(truths, probabilities)</p></div>
+</blockquote><p id="-499398176#i1640sj_6166">Funcția va returna valoarea optimă a pragului <span class="inline-code" id="-499398176#i1640sj_6167">best_epsilon</span>, cel mai bun scor F1 (<span class="inline-code" id="-499398176#i1640sj_6168">best_F1</span>), <span class="inline-code" id="-499398176#i1640sj_6169">associated_precision</span> și <span class="inline-code" id="-499398176#i1640sj_6170">associated_recall</span> asociate cu acest prag.</p><ol class="list list-decimal" id="-499398176#i1640sj_6171" type="1" start="1"><li class="list-item" id="-499398176#i1640sj_6172"><p id="-499398176#i1640sj_6173">initializez rata de recall.</p><div class="code-block detached" id="-499398176#i1640sj_6174"><pre><code class="language-csharp">best_epsilon = 0;
+best_F1 = 0;
+associated_precision = 0;
+associated_recall = 0;</code></pre></div></li><li class="list-item" id="-499398176#i1640sj_6175"><p id="-499398176#i1640sj_6176">setez <span class="inline-code" id="-499398176#i1640sj_6177">stepsize</span> si creez un vector <span class="inline-code" id="-499398176#i1640sj_6178">epsilons</span> cu aceste valori</p><div class="code-block detached" id="-499398176#i1640sj_6179"><pre><code class="language-csharp">stepsize = (max(probabilities) - min(probabilities)) / 1000;
+epsilons = min(probabilities):stepsize:max(probabilities);</code></pre></div></li><li class="list-item" id="-499398176#i1640sj_6180"><p id="-499398176#i1640sj_6181">pentru fiecare valoare a lui <span class="inline-code" id="-499398176#i1640sj_6182">epsilon</span>, se generează un vector de predicții binare, unde probabilitățile mai mici dec&acirc;t epsilon sunt considerate pozitive (1), iar celelalte negative (0).</p><div class="code-block detached" id="-499398176#i1640sj_6183"><pre><code class="language-csharp">for epsilon = epsilons
+     predictions = probabilities &lt; epsilon;</code></pre></div></li><li class="list-item" id="-499398176#i1640sj_6184"><p id="-499398176#i1640sj_6185">calculez predictiile.</p><div class="code-block detached" id="-499398176#i1640sj_6186"><pre><code class="language-csharp">[false_positives, false_negatives, true_positives] = check_predictions(predictions, truths);</code></pre></div></li><li class="list-item" id="-499398176#i1640sj_6187"><p id="-499398176#i1640sj_6188">calcula precizia, rata de recall și scorul F1</p><div class="code-block detached" id="-499398176#i1640sj_6189"><pre><code class="language-csharp">[precision, recall, F1] = metrics(true_positives, false_positives, false_negatives)</code></pre></div></li><li class="list-item" id="-499398176#i1640sj_6190"><p id="-499398176#i1640sj_6191">Dacă scorul F1 calculat pentru o anumită valoare a lui epsilon este mai mare dec&acirc;t cel mai bun scor F1 găsit p&acirc;nă &icirc;n acel moment, atunci valorile asociate cu acesta sunt actualizate ca fiind cele mai bune.</p><div class="code-block detached" id="-499398176#i1640sj_6192"><pre><code class="language-csharp">if F1 &gt; best_F1
+         best_F1 = F1;
+         best_epsilon = epsilon;
+         associated_precision = precision;
+         associated_recall = recall;
+end</code></pre></div></li></ol></section><section><h2 id="-499398176#cod-sursa" data-toc="cod-sursa#optimal-threshold.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="-499398176#i1640sj_6193"><pre><code class="language-csharp">function [best_epsilon, best_F1, associated_precision, associated_recall] = optimal_threshold(truths, probabilities)
+ best_epsilon = 0;
+ best_F1 = 0;
+ associated_precision = 0;
+ associated_recall = 0;
+
+ stepsize = (max(probabilities) - min(probabilities)) / 1000;
+ epsilons = min(probabilities):stepsize:max(probabilities);
+
+ for epsilon = epsilons
+     predictions = probabilities &lt; epsilon;
+     [false_positives, false_negatives, true_positives] = check_predictions(predictions, truths);
+     [precision, recall, F1] = metrics(true_positives, false_positives, false_negatives)
+
+     if F1 &gt; best_F1
+         best_F1 = F1;
+         best_epsilon = epsilon;
+         associated_precision = precision;
+         associated_recall = recall;
+     end
+ endfor
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-863100452">identify_outliers</h1><p id="-863100452#i5t84d5_5760">Funcția este utilizată pentru a identifica valorile <span class="control" id="-863100452#i5t84d5_5762">outliers</span> dintr-un set de date X, folosind valorile etichetate <span class="inline-code" id="-863100452#i5t84d5_5763">yval</span></p><blockquote class="prompt flex bordered-element-rounded warning detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="-863100452#i5t84d5_5764"><span class="control" id="-863100452#i5t84d5_5765">Functia apeleaza <span class="inline-code" id="-863100452#i5t84d5_5766">estimate_gaussian</span>, <span class="inline-code" id="-863100452#i5t84d5_5767">multivariate_gaussians</span> si <span class="inline-code" id="-863100452#i5t84d5_5768">optimal_threshold</span></span></p></div>
+</blockquote><section><h2 id="-863100452#prerequisites" data-toc="prerequisites#identify-outliers.md-prerequisites">Prerequisites</h2><p id="-863100452#i5t84d5_5769">Urmatoarele functii sunt necesare pentru rezolvarea task-ului:</p><ul class="list" id="-863100452#i5t84d5_5770" start="1"><li class="list-item" id="-863100452#i5t84d5_5771"><p>estimate_gaussian (<a href="#-2001626880">estimate_gaussian</a>)</p></li><li class="list-item" id="-863100452#i5t84d5_5773"><p>multivariate_gaussian (<a href="#194574641">multivariate_gaussian</a>)</p></li><li class="list-item" id="-863100452#i5t84d5_5775"><p>optimal_threshold (<a href="#-499398176">optimal_threshold</a>)</p></li></ul></section><section><h2 id="-863100452#implementare" data-toc="implementare#identify-outliers.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="-863100452#i5t84d5_5778">function [outlier_values, outlier_indices] = identify_outliers(X, yval)</p></div>
+</blockquote><p id="-863100452#i5t84d5_5779">Funcția va returna valorile outliers (<span class="inline-code" id="-863100452#i5t84d5_5780">outlier_values</span>) și indicii acestora (<span class="inline-code" id="-863100452#i5t84d5_5781">outlier_indices</span>) &icirc;n setul de date <span class="inline-code" id="-863100452#i5t84d5_5782">X</span>.</p><ol class="list list-decimal" id="-863100452#i5t84d5_5783" type="1" start="1"><li class="list-item" id="-863100452#i5t84d5_5784"><p id="-863100452#i5t84d5_5785">calculez valorile medii și matricea de covarianță pentru setul de date X</p><div class="code-block detached" id="-863100452#i5t84d5_5786"><pre><code class="language-csharp">[mean_values, covariance_matrix] = estimate_gaussian(X);</code></pre></div></li><li class="list-item" id="-863100452#i5t84d5_5787"><p id="-863100452#i5t84d5_5788">calculez probabilitățile fiecărui exemplu din X de a fi generat de o distribuție gaussiană multivariată,</p><div class="code-block detached" id="-863100452#i5t84d5_5789"><pre><code class="language-csharp">probabilities = multivariate_gaussian(X, mean_values, covariance_matrix);</code></pre></div></li><li class="list-item" id="-863100452#i5t84d5_5790"><p id="-863100452#i5t84d5_5791">determin valoarea optimă a pragului (<span class="inline-code" id="-863100452#i5t84d5_5792">epsilon</span>) care maximizează scorul <span class="inline-code" id="-863100452#i5t84d5_5793">F1</span>, folosind valorile etichetate <span class="inline-code" id="-863100452#i5t84d5_5794">yval</span> și probabilitățile calculate.</p><div class="code-block detached" id="-863100452#i5t84d5_5795"><pre><code class="language-csharp">[epsilon, F1, precision, recall] = optimal_threshold(yval, probabilities);</code></pre></div></li><li class="list-item" id="-863100452#i5t84d5_5796"><p id="-863100452#i5t84d5_5797">identific outliers.</p><div class="code-block detached" id="-863100452#i5t84d5_5798"><pre><code class="language-csharp">outlier_indices = find(probabilities &lt; epsilon);</code></pre></div></li></ol></section><section><h2 id="-863100452#cod-sursa" data-toc="cod-sursa#identify-outliers.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="-863100452#i5t84d5_5799"><pre><code class="language-csharp">function [outlier_values, outlier_indices] = identify_outliers(X, yval)
+   % valori medii si matricea de varianta
+   [mean_values, covariance_matrix] = estimate_gaussian(X);
+
+   % probabilitati folosind multivariate
+   probabilities = multivariate_gaussian(X, mean_values, covariance_matrix);
+
+   % prag optim folosind scor F1
+   [epsilon, F1, precision, recall] = optimal_threshold(yval, probabilities);
+
+   % outliers
+   outlier_values = find(probabilities &lt; epsilon);
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="28484561">Kernel Regression</h1><p id="28484561#-fosccm_2819">&Icirc;n viața de zi cu zi ne &icirc;nt&acirc;lnim cu ideea de predicție. De exemplu, ne dorim să estimăm c&acirc;t de mult timp ne va consuma o temă, c&acirc;t de mult timp vom sta &icirc;n trafic, etc. Evident că răspunsurile la astfel de &icirc;ntrebări depind de foarte mulți parametri și ne este destul de greu să găsim relații de cauzalitate &icirc;ntre ei.</p><section><h2 id="28484561#functii" data-toc="functii#Kernel-Regression.md-functii">Functii</h2><p id="28484561#-fosccm_2820">Au fost implementate urmatoarele functii:</p><dl id="28484561#-fosccm_2821" date-style="title-top"><div class="def bordered-element detached"><dt id="28484561#-fosccm_2822" class="definition-list-title">kernel_functions</dt><dd class="definition-list-description"><p id="28484561#-fosccm_2824">functii pentru a construi kernels de tipuri diferite</p></dd></div><div class="def bordered-element detached"><dt id="28484561#-fosccm_2825" class="definition-list-title">build_kernel</dt><dd class="definition-list-description"><p id="28484561#-fosccm_2827">constructor pentru kernel</p></dd></div><div class="def bordered-element detached"><dt id="28484561#-fosccm_2828" class="definition-list-title">cholesky</dt><dd class="definition-list-description"><p id="28484561#-fosccm_2830">metoda pentru descompunerea LU a unei matrici pozitiv semi-definite.</p></dd></div><div class="def bordered-element detached"><dt id="28484561#-fosccm_2831" class="definition-list-title">get_lower_inverse</dt><dd class="definition-list-description"><p id="28484561#-fosccm_2833">inverseaza o matrice lower folosind un algoritm de eliminare gaussiana.</p></dd></div><div class="def bordered-element detached"><dt id="28484561#-fosccm_2834" class="definition-list-title">get_prediction-params</dt><dd class="definition-list-description"><p id="28484561#-fosccm_2836">calculeaza parametrii de predicție</p></dd></div><div class="def bordered-element detached"><dt id="28484561#-fosccm_2837" class="definition-list-title">get_prediction-params-iter</dt><dd class="definition-list-description"><p id="28484561#-fosccm_2839">calculeaza parametrii de predicție iterativ</p></dd></div><div class="def bordered-element detached"><dt id="28484561#-fosccm_2840" class="definition-list-title">split_dataset</dt><dd class="definition-list-description"><p id="28484561#-fosccm_2842">imparte dataset in train_data si pred_data</p></dd></div></dl></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-1900884469">kernel_functions</h1><p id="-1900884469#-436r_4240">Rolul acestor kernel-uri este de a ne oferi o modalitate de a estima parametri necesari in functie de gradul maxim (din punct de vedere polinomial) pe care il atribuim functiei ϕ.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="-1900884469#-436r_4242"><span class="control" id="-1900884469#-436r_4243">Am implementat 3 tipuri de kernel-uri</span></p></div>
+</blockquote><section><h2 id="-1900884469#kernels" data-toc="kernels#kernel-functions.md-kernels">Kernels</h2><ul class="list" id="-1900884469#-436r_4244" start="1"><li class="list-item" id="-1900884469#-436r_4245"><p id="-1900884469#-436r_4246">Linear Kernel</p><div class="code-block detached mermaid" id="-1900884469#-436r_4247"><svg xmlns="http://www.w3.org/2000/svg" width="16.051ex" height="2.583ex" role="img" focusable="false" viewBox="0 -891.7 7094.5 1141.7" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.566ex;"><defs><path id="MJX-150-TEX-I-1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path><path id="MJX-150-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-150-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path id="MJX-150-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-150-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-150-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-150-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-150-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path><path id="MJX-150-TEX-N-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43E" xlink:href="#MJX-150-TEX-I-1D43E"></use></g><g data-mml-node="mo" transform="translate(889,0)"><use data-c="28" xlink:href="#MJX-150-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(1278,0)"><use data-c="1D465" xlink:href="#MJX-150-TEX-I-1D465"></use></g><g data-mml-node="mo" transform="translate(1850,0)"><use data-c="2C" xlink:href="#MJX-150-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(2294.7,0)"><use data-c="1D466" xlink:href="#MJX-150-TEX-I-1D466"></use></g><g data-mml-node="mo" transform="translate(2784.7,0)"><use data-c="29" xlink:href="#MJX-150-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(3451.4,0)"><use data-c="3D" xlink:href="#MJX-150-TEX-N-3D"></use></g><g data-mml-node="msup" transform="translate(4507.2,0)"><g data-mml-node="mi"><use data-c="1D466" xlink:href="#MJX-150-TEX-I-1D466"></use></g><g data-mml-node="mi" transform="translate(523,413) scale(0.707)"><use data-c="1D447" xlink:href="#MJX-150-TEX-I-1D447"></use></g></g><g data-mml-node="mo" transform="translate(5800.2,0)"><use data-c="2217" xlink:href="#MJX-150-TEX-N-2217"></use></g><g data-mml-node="mi" transform="translate(6522.5,0)"><use data-c="1D465" xlink:href="#MJX-150-TEX-I-1D465"></use></g></g></g></svg></div></li></ul><div class="code-block detached" id="-1900884469#-436r_4248"><pre><code class="language-csharp">function retval = linear_kernel(x, y, other)
+   % ignore 'other' parameter
+   retval = dot(x, y);
+endfunction</code></pre></div><ul class="list" id="-1900884469#-436r_4249" start="1"><li class="list-item" id="-1900884469#-436r_4250"><p id="-1900884469#-436r_4251">Polynomial Kernel</p><div class="code-block detached mermaid" id="-1900884469#-436r_4252"><svg xmlns="http://www.w3.org/2000/svg" width="22.728ex" height="2.61ex" role="img" focusable="false" viewBox="0 -903.7 10045.6 1153.7" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.566ex;"><defs><path id="MJX-151-TEX-I-1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path><path id="MJX-151-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-151-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path id="MJX-151-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-151-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-151-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-151-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-151-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-151-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path id="MJX-151-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path><path id="MJX-151-TEX-N-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path><path id="MJX-151-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43E" xlink:href="#MJX-151-TEX-I-1D43E"></use></g><g data-mml-node="mo" transform="translate(889,0)"><use data-c="28" xlink:href="#MJX-151-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(1278,0)"><use data-c="1D465" xlink:href="#MJX-151-TEX-I-1D465"></use></g><g data-mml-node="mo" transform="translate(1850,0)"><use data-c="2C" xlink:href="#MJX-151-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(2294.7,0)"><use data-c="1D466" xlink:href="#MJX-151-TEX-I-1D466"></use></g><g data-mml-node="mo" transform="translate(2784.7,0)"><use data-c="29" xlink:href="#MJX-151-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(3451.4,0)"><use data-c="3D" xlink:href="#MJX-151-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(4507.2,0)"><use data-c="28" xlink:href="#MJX-151-TEX-N-28"></use></g><g data-mml-node="mn" transform="translate(4896.2,0)"><use data-c="31" xlink:href="#MJX-151-TEX-N-31"></use></g><g data-mml-node="mo" transform="translate(5618.4,0)"><use data-c="2B" xlink:href="#MJX-151-TEX-N-2B"></use></g><g data-mml-node="msup" transform="translate(6618.7,0)"><g data-mml-node="mi"><use data-c="1D466" xlink:href="#MJX-151-TEX-I-1D466"></use></g><g data-mml-node="mi" transform="translate(523,413) scale(0.707)"><use data-c="1D447" xlink:href="#MJX-151-TEX-I-1D447"></use></g></g><g data-mml-node="mo" transform="translate(7911.7,0)"><use data-c="2217" xlink:href="#MJX-151-TEX-N-2217"></use></g><g data-mml-node="mi" transform="translate(8633.9,0)"><use data-c="1D465" xlink:href="#MJX-151-TEX-I-1D465"></use></g><g data-mml-node="msup" transform="translate(9205.9,0)"><g data-mml-node="mo"><use data-c="29" xlink:href="#MJX-151-TEX-N-29"></use></g><g data-mml-node="mi" transform="translate(422,413) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-151-TEX-I-1D451"></use></g></g></g></g></svg></div></li></ul><div class="code-block detached" id="-1900884469#-436r_4253"><pre><code class="language-csharp">function retval = polynomial_kernel (x, y, d)
+   % kernel polynomial
+   retval = (1 + dot(x, y))^d; 
+endfunction</code></pre></div><ul class="list" id="-1900884469#-436r_4254" start="1"><li class="list-item" id="-1900884469#-436r_4255"><p id="-1900884469#-436r_4256">Gaussian/Radial - Basis Kernel</p><div class="code-block detached mermaid" id="-1900884469#-436r_4257"><svg xmlns="http://www.w3.org/2000/svg" width="28.789ex" height="6.785ex" role="img" focusable="false" viewBox="0 -1749.5 12724.9 2999" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -2.827ex;"><defs><path id="MJX-152-TEX-I-1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path><path id="MJX-152-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-152-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path id="MJX-152-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-152-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-152-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-152-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-152-TEX-N-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"></path><path id="MJX-152-TEX-N-78" d="M201 0Q189 3 102 3Q26 3 17 0H11V46H25Q48 47 67 52T96 61T121 78T139 96T160 122T180 150L226 210L168 288Q159 301 149 315T133 336T122 351T113 363T107 370T100 376T94 379T88 381T80 383Q74 383 44 385H16V431H23Q59 429 126 429Q219 429 229 431H237V385Q201 381 201 369Q201 367 211 353T239 315T268 274L272 270L297 304Q329 345 329 358Q329 364 327 369T322 376T317 380T310 384L307 385H302V431H309Q324 428 408 428Q487 428 493 431H499V385H492Q443 385 411 368Q394 360 377 341T312 257L296 236L358 151Q424 61 429 57T446 50Q464 46 499 46H516V0H510H502Q494 1 482 1T457 2T432 2T414 3Q403 3 377 3T327 1L304 0H295V46H298Q309 46 320 51T331 63Q331 65 291 120L250 175Q249 174 219 133T185 88Q181 83 181 74Q181 63 188 55T206 46Q208 46 208 23V0H201Z"></path><path id="MJX-152-TEX-N-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"></path><path id="MJX-152-TEX-N-2061" d=""></path><path id="MJX-152-TEX-S4-28" d="M758 -1237T758 -1240T752 -1249H736Q718 -1249 717 -1248Q711 -1245 672 -1199Q237 -706 237 251T672 1700Q697 1730 716 1749Q718 1750 735 1750H752Q758 1744 758 1741Q758 1737 740 1713T689 1644T619 1537T540 1380T463 1176Q348 802 348 251Q348 -242 441 -599T744 -1218Q758 -1237 758 -1240Z"></path><path id="MJX-152-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-152-TEX-N-2016" d="M133 736Q138 750 153 750Q164 750 170 739Q172 735 172 250T170 -239Q164 -250 152 -250Q144 -250 138 -244L137 -243Q133 -241 133 -179T132 250Q132 731 133 736ZM329 739Q334 750 346 750Q353 750 361 744L362 743Q366 741 366 679T367 250T367 -178T362 -243L361 -244Q355 -250 347 -250Q335 -250 329 -239Q327 -235 327 250T329 739Z"></path><path id="MJX-152-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-152-TEX-I-1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path><path id="MJX-152-TEX-S4-29" d="M33 1741Q33 1750 51 1750H60H65Q73 1750 81 1743T119 1700Q554 1207 554 251Q554 -707 119 -1199Q76 -1250 66 -1250Q65 -1250 62 -1250T56 -1249Q55 -1249 53 -1249T49 -1250Q33 -1250 33 -1239Q33 -1236 50 -1214T98 -1150T163 -1052T238 -910T311 -727Q443 -335 443 251Q443 402 436 532T405 831T339 1142T224 1438T50 1716Q33 1737 33 1741Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43E" xlink:href="#MJX-152-TEX-I-1D43E"></use></g><g data-mml-node="mo" transform="translate(889,0)"><use data-c="28" xlink:href="#MJX-152-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(1278,0)"><use data-c="1D465" xlink:href="#MJX-152-TEX-I-1D465"></use></g><g data-mml-node="mo" transform="translate(1850,0)"><use data-c="2C" xlink:href="#MJX-152-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(2294.7,0)"><use data-c="1D466" xlink:href="#MJX-152-TEX-I-1D466"></use></g><g data-mml-node="mo" transform="translate(2784.7,0)"><use data-c="29" xlink:href="#MJX-152-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(3451.4,0)"><use data-c="3D" xlink:href="#MJX-152-TEX-N-3D"></use></g><g data-mml-node="mi" transform="translate(4507.2,0)"><use data-c="65" xlink:href="#MJX-152-TEX-N-65"></use><use data-c="78" xlink:href="#MJX-152-TEX-N-78" transform="translate(444,0)"></use><use data-c="70" xlink:href="#MJX-152-TEX-N-70" transform="translate(972,0)"></use></g><g data-mml-node="mo" transform="translate(6035.2,0)"><use data-c="2061" xlink:href="#MJX-152-TEX-N-2061"></use></g><g data-mml-node="mrow" transform="translate(6201.9,0)"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="28" xlink:href="#MJX-152-TEX-S4-28"></use></g><g data-mml-node="mo" transform="translate(792,0)"><use data-c="2212" xlink:href="#MJX-152-TEX-N-2212"></use></g><g data-mml-node="mfrac" transform="translate(1570,0)"><g data-mml-node="mrow" transform="translate(220,747.9)"><g data-mml-node="mo"><use data-c="2016" xlink:href="#MJX-152-TEX-N-2016"></use></g><g data-mml-node="mi" transform="translate(500,0)"><use data-c="1D465" xlink:href="#MJX-152-TEX-I-1D465"></use></g><g data-mml-node="mo" transform="translate(1294.2,0)"><use data-c="2212" xlink:href="#MJX-152-TEX-N-2212"></use></g><g data-mml-node="mi" transform="translate(2294.4,0)"><use data-c="1D466" xlink:href="#MJX-152-TEX-I-1D466"></use></g><g data-mml-node="msubsup" transform="translate(2784.4,0)"><g data-mml-node="mo"><use data-c="2016" xlink:href="#MJX-152-TEX-N-2016"></use></g><g data-mml-node="mn" transform="translate(533,363) scale(0.707)"><use data-c="32" xlink:href="#MJX-152-TEX-N-32"></use></g><g data-mml-node="mn" transform="translate(533,-287.9) scale(0.707)"><use data-c="32" xlink:href="#MJX-152-TEX-N-32"></use></g></g></g><g data-mml-node="mrow" transform="translate(1326.7,-719.9)"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-152-TEX-N-32"></use></g><g data-mml-node="msup" transform="translate(500,0)"><g data-mml-node="mi"><use data-c="1D70E" xlink:href="#MJX-152-TEX-I-1D70E"></use></g><g data-mml-node="mn" transform="translate(604,289) scale(0.707)"><use data-c="32" xlink:href="#MJX-152-TEX-N-32"></use></g></g></g><rect width="3921" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(5731,0) translate(0 -0.5)"><use data-c="29" xlink:href="#MJX-152-TEX-S4-29"></use></g></g></g></g></svg></div></li></ul><div class="code-block detached" id="-1900884469#-436r_4258"><pre><code class="language-csharp">function retval = gaussian_kernel (x, y, sigma)
+   squared_distance = sum((x - y).^2); 
+   retval = exp(-squared_distance / (2 * sigma^2));
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="1515092092">build_kernel</h1><p id="1515092092#-i5djkh_1532">Funcția este utilizată pentru a construi o matrice kernel, care este o componentă esențială &icirc;n multi algoritmi de &icirc;nvățare automată, inclusiv &icirc;n SVMs.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1515092092#-i5djkh_1534"><span class="control" id="1515092092#-i5djkh_1535">Functia nu depinde de alte functii</span></p></div>
+</blockquote><section><h2 id="1515092092#implementare" data-toc="implementare#build-kernel.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1515092092#-i5djkh_1537">function [K] = build_kernel (X, f, f_param)</p></div>
+</blockquote><p id="1515092092#-i5djkh_1538">Funcția va returna o matrice kernel <span class="inline-code" id="1515092092#-i5djkh_1539">K</span>, care este calculată folosind o funcție kernel <span class="inline-code" id="1515092092#-i5djkh_1540">f</span> și un parametru al acestei funcții <span class="inline-code" id="1515092092#-i5djkh_1541">f_param</span></p><ol class="list list-decimal" id="1515092092#-i5djkh_1542" type="1" start="1"><li class="list-item" id="1515092092#-i5djkh_1543"><p id="1515092092#-i5djkh_1544">determin numărul de <span class="inline-code" id="1515092092#-i5djkh_1545">num_data</span> din setul de date <span class="inline-code" id="1515092092#-i5djkh_1546">X</span>.</p><div class="code-block detached" id="1515092092#-i5djkh_1547"><pre><code class="language-csharp">num_data = size(X, 1);</code></pre></div></li><li class="list-item" id="1515092092#-i5djkh_1548"><p id="1515092092#-i5djkh_1549">inițializez matricea kernel <span class="inline-code" id="1515092092#-i5djkh_1550">K</span> ca o matrice pătratică de dimensiune <span class="inline-code" id="1515092092#-i5djkh_1551">num_data</span> x <span class="inline-code" id="1515092092#-i5djkh_1552">num_data</span></p><div class="code-block detached" id="1515092092#-i5djkh_1553"><pre><code class="language-csharp">K = zeros(num_data, num_data);</code></pre></div></li><li class="list-item" id="1515092092#-i5djkh_1554"><p id="1515092092#-i5djkh_1555">parcurg fiecare pereche de exemple de date pentru a calcula valorile kernel.</p><div class="code-block detached" id="1515092092#-i5djkh_1556"><pre><code class="language-csharp">for i = 1:num_data
+ for j = 1:num_data</code></pre></div></li><li class="list-item" id="1515092092#-i5djkh_1557"><p id="1515092092#-i5djkh_1558">calculează valoarea kernel pentru perechea de exemple <span class="inline-code" id="1515092092#-i5djkh_1559">i</span> și <span class="inline-code" id="1515092092#-i5djkh_1560">j</span> folosind funcția kernel <span class="inline-code" id="1515092092#-i5djkh_1561">f</span></p><div class="code-block detached" id="1515092092#-i5djkh_1562"><pre><code class="language-csharp">K(i, j) = f(X(i, :), X(j, :), f_param);</code></pre></div></li></ol></section><section><h2 id="1515092092#cod-sursa" data-toc="cod-sursa#build-kernel.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="1515092092#-i5djkh_1563"><pre><code class="language-csharp">function [K] = build_kernel (X, f, f_param)
+   % set size of matrix
+   num_data = size(X, 1);
+
+   % memory allocate
+   K = zeros(num_data, num_data);
+
+   % compute kernel values
+   for i = 1:num_data
+      for j = 1:num_data
+         % kernal value for i &lt;-&gt; j
+         K(i, j) = f(X(i, :), X(j, :), f_param);
+      end
+   end
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="1831332510">cholesky</h1><p id="1831332510#i5eag36_1696">Descompunerea Cholesky este o metodă de factorizare a unei matrice simetrice pozitiv definite &icirc;n produsul unei matrice inferioare triunghiulare și transpusa sa.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1831332510#i5eag36_1698"><span class="control" id="1831332510#i5eag36_1699">Functia nu depinde de alte functii</span></p></div>
+</blockquote><section><h2 id="1831332510#implementare" data-toc="implementare#cholesky.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1831332510#i5eag36_1701">function L = cholesky(A)</p></div>
+</blockquote><p id="1831332510#i5eag36_1702">Funcția va returna o matrice triunghiulară inferioară <span class="inline-code" id="1831332510#i5eag36_1703">L</span> caracteristica descompunerii Cholesky</p><ol class="list list-decimal" id="1831332510#i5eag36_1704" type="1" start="1"><li class="list-item" id="1831332510#i5eag36_1705"><p id="1831332510#i5eag36_1706">determin dimensiunea matricei <span class="inline-code" id="1831332510#i5eag36_1707">A</span> și initializez matricea <span class="inline-code" id="1831332510#i5eag36_1708">L</span> ca o matrice pătratică de dimensiune <span class="inline-code" id="1831332510#i5eag36_1709">n</span> x <span class="inline-code" id="1831332510#i5eag36_1710">n</span></p><div class="code-block detached" id="1831332510#i5eag36_1711"><pre><code class="language-csharp">[n, m] = size(A);
+L = zeros(n);</code></pre></div></li><li class="list-item" id="1831332510#i5eag36_1712"><p id="1831332510#i5eag36_1713">calculez elementele diagonale ale matricei <span class="inline-code" id="1831332510#i5eag36_1714">L</span> folosind rădăcina pătrată a diferenței dintre elementul corespunzător din <span class="inline-code" id="1831332510#i5eag36_1715">A</span> și suma pătratelor elementelor anterioare din aceeași linie.</p><div class="code-block detached" id="1831332510#i5eag36_1716"><pre><code class="language-csharp">for i = 1:n 
+   L(i, i) = sqrt(A(i, i) - dot(L(i, 1:i-1), L(i, 1:i-1)));</code></pre></div></li><li class="list-item" id="1831332510#i5eag36_1717"><p id="1831332510#i5eag36_1718">calculez elementele non-diagonale ale matricei <span class="inline-code" id="1831332510#i5eag36_1719">L</span> prin scăderea produsului scalar al elementelor anterioare din linia <span class="inline-code" id="1831332510#i5eag36_1720">i</span> și coloana <span class="inline-code" id="1831332510#i5eag36_1721">j</span> și &icirc;mpărțirea rezultatului la elementul diagonal curent din <span class="inline-code" id="1831332510#i5eag36_1722">L</span></p><div class="code-block detached" id="1831332510#i5eag36_1723"><pre><code class="language-csharp">for j = i+1:n
+     L(j, i) = (A(j, i) - dot(L(i, 1:i-1), L(j, 1:i-1))) / L(i, i);</code></pre></div></li></ol></section><section><h2 id="1831332510#cod-sursa" data-toc="cod-sursa#cholesky.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="1831332510#i5eag36_1724"><pre><code class="language-csharp">function L = cholesky(A)
+   [n, m] = size(A);
+   L = zeros(n); 
+
+   for i = 1:n 
+      L(i, i) = sqrt(A(i, i) - dot(L(i, 1:i-1), L(i, 1:i-1)));
+      for j = i+1:n
+         L(j, i) = (A(j, i) - dot(L(i, 1:i-1), L(j, 1:i-1))) / L(i, i);
+      end
+   end
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="683919917">get_lower_inverse</h1><p id="683919917#-w5rpgk_2104">Funcția este folosită pentru a calcula inversa unei matrice triunghiulare inferioare L.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="683919917#-w5rpgk_2106"><span class="control" id="683919917#-w5rpgk_2107">Functia nu depinde de alte functii</span></p></div>
+</blockquote><section><h2 id="683919917#implementare" data-toc="implementare#get-lower-inverse.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="683919917#-w5rpgk_2109">function P = get_lower_inverse(L)</p></div>
+</blockquote><p id="683919917#-w5rpgk_2110">Funcția va returna matricea <span class="inline-code" id="683919917#-w5rpgk_2111">P</span>, care este inversa matricei triunghiulare inferioare <span class="inline-code" id="683919917#-w5rpgk_2112">L</span>.</p><ol class="list list-decimal" id="683919917#-w5rpgk_2113" type="1" start="1"><li class="list-item" id="683919917#-w5rpgk_2114"><p id="683919917#-w5rpgk_2115">determin dimensiunea matricei <span class="inline-code" id="683919917#-w5rpgk_2116">L</span> și se inițializez matricea <span class="inline-code" id="683919917#-w5rpgk_2117">P</span> ca o matrice identitate de dimensiune <span class="inline-code" id="683919917#-w5rpgk_2118">n</span> x <span class="inline-code" id="683919917#-w5rpgk_2119">n</span>.</p><div class="code-block detached" id="683919917#-w5rpgk_2120"><pre><code class="language-csharp">n = size(L, 1);
+P = eye(n);</code></pre></div></li><li class="list-item" id="683919917#-w5rpgk_2121"><p id="683919917#-w5rpgk_2122">calculez elementele diagonale ale matricei <span class="inline-code" id="683919917#-w5rpgk_2123">P</span> prin inversarea elementelor diagonale ale matricei <span class="inline-code" id="683919917#-w5rpgk_2124">L</span>.</p><div class="code-block detached" id="683919917#-w5rpgk_2125"><pre><code class="language-csharp">for j = 1:n
+     P(j, j) = 1 / L(j, j);</code></pre></div></li><li class="list-item" id="683919917#-w5rpgk_2126"><p id="683919917#-w5rpgk_2127">Calculez elementele sub diagonala 1 ale matricei <span class="inline-code" id="683919917#-w5rpgk_2128">P</span>. Pentru fiecare element <span class="inline-code" id="683919917#-w5rpgk_2129">P(i, j)</span>, se &icirc;nmulțește secțiunea corespunzătoare a liniei <span class="inline-code" id="683919917#-w5rpgk_2130">i</span> din <span class="inline-code" id="683919917#-w5rpgk_2131">L</span> cu coloana <span class="inline-code" id="683919917#-w5rpgk_2132">j</span> din <span class="inline-code" id="683919917#-w5rpgk_2133">P</span> (p&acirc;nă la elementul <span class="inline-code" id="683919917#-w5rpgk_2134">i-1</span>), se negativizează rezultatul și se &icirc;mparte la elementul diagonal <span class="inline-code" id="683919917#-w5rpgk_2135">L(i, i)</span>.</p><div class="code-block detached" id="683919917#-w5rpgk_2136"><pre><code class="language-csharp">for i = j+1:n
+   P(i, j) = -L(i, j:i-1) * P(j:i-1, j) / L(i, i);</code></pre></div></li></ol></section><section><h2 id="683919917#cod-sursa" data-toc="cod-sursa#get-lower-inverse.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="683919917#-w5rpgk_2137"><pre><code class="language-csharp">function P = get_lower_inverse(L)
+   n = size(L, 1);
+   P = eye(n);
+   for j = 1:n
+      P(j, j) = 1 / L(j, j);
+      for i = j+1:n
+           P(i, j) = -L(i, j:i-1) * P(j:i-1, j) / L(i, i);
+      end
+   end
+end</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="61004166">get_prediction_params</h1><p id="61004166#i4nzd1_2427">Funcția este folosită pentru a calcula parametrii de predicție pentru un model de &icirc;nvățare automată, dată o matrice kernel <span class="inline-code" id="61004166#i4nzd1_2429">K</span>, un vector de etichete <span class="inline-code" id="61004166#i4nzd1_2430">y</span> și un parametru de regularizare <span class="inline-code" id="61004166#i4nzd1_2431">lambda</span>.</p><blockquote class="prompt flex bordered-element-rounded warning detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="61004166#i4nzd1_2432"><span class="control" id="61004166#i4nzd1_2433">Functia apeleaza functia <span class="inline-code" id="61004166#i4nzd1_2434">cholesky</span></span></p></div>
+</blockquote><section><h2 id="61004166#prerequisites" data-toc="prerequisites#get-predictions-params.md-prerequisites">Prerequisites</h2><p id="61004166#i4nzd1_2435">Urmatoarele functii sunt necesare pentru rezolvarea task-ului:</p><ul class="list" id="61004166#i4nzd1_2436" start="1"><li class="list-item" id="61004166#i4nzd1_2437"><p>cholesky (<a href="#1831332510">cholesky</a>)</p></li></ul></section><section><h2 id="61004166#implementare" data-toc="implementare#get-predictions-params.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="61004166#i4nzd1_2440">function [a] = get_prediction_params (K, y, lambda)</p></div>
+</blockquote><p id="61004166#i4nzd1_2441">Funcția va returna un vector a care conține parametrii de predicție.</p><ol class="list list-decimal" id="61004166#i4nzd1_2442" type="1" start="1"><li class="list-item" id="61004166#i4nzd1_2443"><p id="61004166#i4nzd1_2444">determin dimensiunea matricei kernel <span class="inline-code" id="61004166#i4nzd1_2445">K</span></p><div class="code-block detached" id="61004166#i4nzd1_2446"><pre><code class="language-csharp">n = size(K, 1);</code></pre></div></li><li class="list-item" id="61004166#i4nzd1_2447"><p id="61004166#i4nzd1_2448">Se adaugă regularizare la matricea kernel <span class="inline-code" id="61004166#i4nzd1_2449">K</span> prin adăugarea produsului dintre <span class="inline-code" id="61004166#i4nzd1_2450">lambda</span> și matricea identitate <span class="inline-code" id="61004166#i4nzd1_2451">eye(n)</span> la <span class="inline-code" id="61004166#i4nzd1_2452">K</span>. Apoi se aplică descompunerea <span class="inline-code" id="61004166#i4nzd1_2453">Cholesky</span> pentru a obține o matrice triunghiulară inferioară <span class="inline-code" id="61004166#i4nzd1_2454">L</span>.</p><div class="code-block detached" id="61004166#i4nzd1_2455"><pre><code class="language-csharp">L = cholesky(K + lambda * eye(n));</code></pre></div></li><li class="list-item" id="61004166#i4nzd1_2456"><p id="61004166#i4nzd1_2457">calculez inversa matricei triunghiulare inferioare <span class="inline-code" id="61004166#i4nzd1_2458">L</span>.</p><div class="code-block detached" id="61004166#i4nzd1_2459"><pre><code class="language-csharp">Linv = get_lower_inverse(L);</code></pre></div></li><li class="list-item" id="61004166#i4nzd1_2460"><p id="61004166#i4nzd1_2461">rezolv sistemul liniar pentru a obține parametrii de predicție <span class="inline-code" id="61004166#i4nzd1_2462">a</span>. Acest lucru se face prin &icirc;nmulțirea transpusei matricei inverse <span class="inline-code" id="61004166#i4nzd1_2463">Linv'</span> cu rezultatul &icirc;nmulțirii matricei inverse <span class="inline-code" id="61004166#i4nzd1_2464">Linv</span> cu vectorul de etichete <span class="inline-code" id="61004166#i4nzd1_2465">y</span>.</p><div class="code-block detached" id="61004166#i4nzd1_2466"><pre><code class="language-csharp">a = Linv' * (Linv * y);</code></pre></div></li></ol></section><section><h2 id="61004166#cod-sursa" data-toc="cod-sursa#get-predictions-params.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="61004166#i4nzd1_2467"><pre><code class="language-csharp">function [a] = get_prediction_params (K, y, lambda)
+   n = size(K, 1);
+   L = cholesky(K + lambda * eye(n));  % cholesky
+   Linv = get_lower_inverse(L);  % inverse
+   a = Linv' * (Linv * y);  % rezolv sistemul liniar
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="1558111000">get_prediction_params_iter</h1><p id="1558111000#w404p1_2837">Funcția este folosită pentru a calcula parametrii de predicție &icirc;ntr-un mod iterativ, folosind metoda gradientului conjugat.</p><blockquote class="prompt flex bordered-element-rounded warning detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1558111000#w404p1_2839"><span class="control" id="1558111000#w404p1_2840">Functia apeleaza <span class="inline-code" id="1558111000#w404p1_2841">conjugate_gradient</span></span></p></div>
+</blockquote><section><h2 id="1558111000#prerequisites" data-toc="prerequisites#get-prediction-params-iter.md-prerequisites">Prerequisites</h2><p id="1558111000#w404p1_2842">Urmatoarele functii sunt necesare pentru rezolvarea task-ului:</p><ul class="list" id="1558111000#w404p1_2843" start="1"><li class="list-item" id="1558111000#w404p1_2844"><p>conjugate_gradient</p></li></ul><div class="code-block detached" id="1558111000#w404p1_2845"><pre><code class="language-csharp">function [x] = conjugate_gradient_optimized(A, b, x0, tol, max_iter)
+     % initializez variabile
+      r = b - A * x0; % reziduu
+     v = r;           % dirctie de cautare
+     x = x0;          % solutie
+     tol_sq = tol^2;  % toleranta^2 (eficientizare)
+     k = 0;           % contor
+
+     % pre-calculez prod scalar al reziduului inital
+     rho = r' * r;
+
+     % Iterez pana la convergenta sau max_iter
+     while k &lt; max_iter &amp;&amp; rho &gt; tol_sq
+         Av = A * v;
+         alpha = rho / (v' * Av);
+         x = x + alpha * v;  % actualizez solutia
+         r = r - alpha * Av; % actualizez reziduu
+         rho_new = r' * r;   % noul produs scalar al reziduului
+         beta = rho_new / rho;
+         v = r + beta * v;   % actualizez directia de cautare
+         rho = rho_new;      % actualizez produsul scalar al reziduului
+         k = k + 1;          % incrementez contor
+     end
+ end</code></pre></div></section><section><h2 id="1558111000#implementare" data-toc="implementare#get-prediction-params-iter.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1558111000#w404p1_2847">function [a] = get_prediction_params_iterative (K, y, lambda)</p></div>
+</blockquote><p id="1558111000#w404p1_2848">Funcția va returna un vector <span class="inline-code" id="1558111000#w404p1_2849">a</span> care conține parametrii de predicție calculați.</p><ol class="list list-decimal" id="1558111000#w404p1_2850" type="1" start="1"><li class="list-item" id="1558111000#w404p1_2851"><p id="1558111000#w404p1_2852">determin numărul de linii din matricea kernel <span class="inline-code" id="1558111000#w404p1_2853">K</span></p><div class="code-block detached" id="1558111000#w404p1_2854"><pre><code class="language-csharp">m = size(K, 1);</code></pre></div></li><li class="list-item" id="1558111000#w404p1_2855"><p id="1558111000#w404p1_2856">regularizez matricea kernel <span class="inline-code" id="1558111000#w404p1_2857">K</span> prin adăugarea produsului dintre <span class="inline-code" id="1558111000#w404p1_2858">lambda</span> și matricea identitate <span class="inline-code" id="1558111000#w404p1_2859">eye(m)</span> la <span class="inline-code" id="1558111000#w404p1_2860">K</span>, rezult&acirc;nd matricea <span class="inline-code" id="1558111000#w404p1_2861">A</span></p><div class="code-block detached" id="1558111000#w404p1_2862"><pre><code class="language-csharp">A = lambda * eye(m) + K;</code></pre></div></li><li class="list-item" id="1558111000#w404p1_2863"><p id="1558111000#w404p1_2864">inițializez vectorul de start x0 pentru algoritmul iterativ, set&acirc;nd toate valorile la zero.</p><div class="code-block detached" id="1558111000#w404p1_2865"><pre><code class="language-csharp">x0 = zeros(m, 1);</code></pre></div></li><li class="list-item" id="1558111000#w404p1_2866"><p id="1558111000#w404p1_2867">setez toleranta</p><div class="code-block detached" id="1558111000#w404p1_2868"><pre><code class="language-csharp">tol = 1e-6;</code></pre></div></li><li class="list-item" id="1558111000#w404p1_2869"><p id="1558111000#w404p1_2870">setez un număr maxim de iterații <span class="inline-code" id="1558111000#w404p1_2871">max_iter</span> pentru algoritmul iterativ.</p><div class="code-block detached" id="1558111000#w404p1_2872"><pre><code class="language-csharp">max_iter = 100;</code></pre></div></li><li class="list-item" id="1558111000#w404p1_2873"><p id="1558111000#w404p1_2874">aplic metoda gradientului conjugat pentru a rezolva sistemul liniar</p><div class="code-block detached" id="1558111000#w404p1_2875"><pre><code class="language-csharp">a = conjugate_gradient(A, y, x0, tol, max_iter);</code></pre></div></li></ol></section><section><h2 id="1558111000#cod-sursa" data-toc="cod-sursa#get-prediction-params-iter.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="1558111000#w404p1_2876"><pre><code class="language-csharp">function [a] = get_prediction_params_iterative (K, y, lambda)
+     % numarul de linii
+     m = size(K, 1);
+
+     % regularizez matricea K
+     A = lambda * eye(m) + K;
+
+     % intializez x0
+     x0 = zeros(m, 1);
+
+     % Setez toleranta
+     tol = 1e-6;
+
+     % numarul maxim de iteratii
+     max_iter = 100;
+
+     % aplic conjugatul
+     a = conjugate_gradient(A, y, x0, tol, max_iter);
+ endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="1288435909">split_dataset</h1><p id="1288435909#i5m39m6_1856">Funcția este folosită pentru a &icirc;mpărți un set de date <span class="inline-code" id="1288435909#i5m39m6_1858">X</span> și etichetele asociate <span class="inline-code" id="1288435909#i5m39m6_1859">y</span> &icirc;n două subgrupuri: unul pentru antrenament și unul pentru predicții, bazat pe un procentaj dat.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1288435909#i5m39m6_1860"><span class="control" id="1288435909#i5m39m6_1861">Functia nu depinde de alte functii</span></p></div>
+</blockquote><section><h2 id="1288435909#implementare" data-toc="implementare#split-dataset.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1288435909#i5m39m6_1863">function [X_train, y_train, X_pred, y_pred] = split_dataset (X, y, percentage)</p></div>
+</blockquote><p id="1288435909#i5m39m6_1864">Funcția va returna patru seturi de date: <span class="inline-code" id="1288435909#i5m39m6_1865">X_train</span> și <span class="inline-code" id="1288435909#i5m39m6_1866">y_train</span> pentru antrenament, și <span class="inline-code" id="1288435909#i5m39m6_1867">X_pred</span> și <span class="inline-code" id="1288435909#i5m39m6_1868">y_pred</span> pentru predicții.</p><ol class="list list-decimal" id="1288435909#i5m39m6_1869" type="1" start="1"><li class="list-item" id="1288435909#i5m39m6_1870"><p id="1288435909#i5m39m6_1871">determin numărul total de puncte de date din setul <span class="inline-code" id="1288435909#i5m39m6_1872">X</span></p><div class="code-block detached" id="1288435909#i5m39m6_1873"><pre><code class="language-csharp">num_data = size(X, 1);</code></pre></div></li><li class="list-item" id="1288435909#i5m39m6_1874"><p id="1288435909#i5m39m6_1875">calculez numărul de puncte de date care vor fi folosite pentru antrenament, rotunjind produsul dintre procentajul dat și numărul total de date.</p><div class="code-block detached" id="1288435909#i5m39m6_1876"><pre><code class="language-csharp">num_train_data = round(percentage * num_data);</code></pre></div></li><li class="list-item" id="1288435909#i5m39m6_1877"><p id="1288435909#i5m39m6_1878">creez un vector de indici <span class="inline-code" id="1288435909#i5m39m6_1879">train_indices</span> pentru datele de antrenament</p><div class="code-block detached" id="1288435909#i5m39m6_1880"><pre><code class="language-csharp">train_indices = 1:num_train_data;</code></pre></div></li><li class="list-item" id="1288435909#i5m39m6_1881"><p id="1288435909#i5m39m6_1882">creez un vector de indici <span class="inline-code" id="1288435909#i5m39m6_1883">pred_indices</span> pentru datele de predicție</p><div class="code-block detached" id="1288435909#i5m39m6_1884"><pre><code class="language-csharp">pred_indices = num_train_data + 1:num_data;</code></pre></div></li><li class="list-item" id="1288435909#i5m39m6_1885"><p id="1288435909#i5m39m6_1886">extrag datele de antrenament <span class="inline-code" id="1288435909#i5m39m6_1887">X_trai</span>n și etichetele <span class="inline-code" id="1288435909#i5m39m6_1888">y_train</span> folosind indicii de antrenament.</p><div class="code-block detached" id="1288435909#i5m39m6_1889"><pre><code class="language-csharp">X_train = X(train_indices, :);
+y_train = y(train_indices);</code></pre></div></li><li class="list-item" id="1288435909#i5m39m6_1890"><p id="1288435909#i5m39m6_1891">extrag datele de predicție <span class="inline-code" id="1288435909#i5m39m6_1892">X_pred</span> și etichetele <span class="inline-code" id="1288435909#i5m39m6_1893">y_pred</span> folosind indicii de predicție.</p><div class="code-block detached" id="1288435909#i5m39m6_1894"><pre><code class="language-csharp">X_pred = X(pred_indices, :);
+y_pred = y(pred_indices);</code></pre></div></li></ol></section><section><h2 id="1288435909#cod-sursa" data-toc="cod-sursa#split-dataset.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="1288435909#i5m39m6_1895"><pre><code class="language-csharp">function [X_train, y_train, X_pred, y_pred] = split_dataset (X, y, percentage)
+   % total data points
+   num_data = size(X, 1);
+
+   % round 
+   num_train_data = round(percentage * num_data);
+
+   % indices for training
+   train_indices = 1:num_train_data;
+
+   % indices for preds
+   pred_indices = num_train_data + 1:num_data;
+
+   % training data
+   X_train = X(train_indices, :);
+   y_train = y(train_indices);
+
+   % prediction data
+   X_pred = X(pred_indices, :);
+   y_pred = y(pred_indices);
+
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="5189503">Markov Text Generation</h1><p id="5189503#i88hoam_1847">Cel mai simplu task actual, in LLMs este Text Generation. ChatGPT insusi este un &rdquo;text generator&rdquo; implementat ca Transformer. In acest task, nu vom ajunge nici pe departe la nivelul lui ChatGPT, ci vom incerca insa sa cream un mini-AI bazat pe Lanturi Markov care poate genera text care sa semene cu un fisier de input. Scopul acestui task este in primul rand sa va familiarizeze cu lucrul cu Stringuri si Cells in MATLAB, si mai apoi sa va prezinte terminologia folosita in AI training.</p><section><h2 id="5189503#functii" data-toc="functii#Markov-Text-Generation.md-functii">Functii</h2><p id="5189503#i88hoam_1848">Au fost implementate urmatoarele functii:</p><dl id="5189503#i88hoam_1849" date-style="title-top"><div class="def bordered-element detached"><dt id="5189503#i88hoam_1850" class="definition-list-title">distinct_words</dt><dd class="definition-list-description"><p id="5189503#i88hoam_1852">intoarce tokenurile sortate si unice.</p></dd></div><div class="def bordered-element detached"><dt id="5189503#i88hoam_1853" class="definition-list-title">k_secv</dt><dd class="definition-list-description"><p id="5189503#i88hoam_1855">pentru un cell-array unidimensional returneaza un cell-array de k-secvente</p></dd></div><div class="def bordered-element detached"><dt id="5189503#i88hoam_1856" class="definition-list-title">distinct_k_secv</dt><dd class="definition-list-description"><p id="5189503#i88hoam_1858">intoarce k-secventele sortate si unice.</p></dd></div><div class="def bordered-element detached"><dt id="5189503#i88hoam_1859" class="definition-list-title">word_idx</dt><dd class="definition-list-description"><p id="5189503#i88hoam_1861">intoarce un dictionar care contine indecsii asociati fiecarui label.</p></dd></div><div class="def bordered-element detached"><dt id="5189503#i88hoam_1862" class="definition-list-title">k_secv_idx</dt><dd class="definition-list-description"><p id="5189503#i88hoam_1864">intoarce un dictionar care contine indecsii asociati fiecarui feature (k-secventa).</p></dd></div><div class="def bordered-element detached"><dt id="5189503#i88hoam_1865" class="definition-list-title">stochastic_matrix</dt><dd class="definition-list-description"><p id="5189503#i88hoam_1867">creeaza matricea stochastica</p></dd></div></dl></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="1514680472">distinct_words</h1><p id="1514680472#-ggw2t3_615">Funcția este folosită pentru a returna o listă de cuvinte unice dintr-un vector de tokeni <span class="inline-code" id="1514680472#-ggw2t3_617">tokens</span>.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1514680472#-ggw2t3_618"><span class="control" id="1514680472#-ggw2t3_619">Functia nu depinde de alte functii</span></p></div>
+</blockquote><section><h2 id="1514680472#implementare" data-toc="implementare#distinct-words.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1514680472#-ggw2t3_621">function retval = distinct_words(tokens)</p></div>
+</blockquote><p id="1514680472#-ggw2t3_622">Funcția va returna un vector <span class="inline-code" id="1514680472#-ggw2t3_623">retval</span> care conține tokenii unici.</p><ul class="list" id="1514680472#-ggw2t3_624" start="1"><li class="list-item" id="1514680472#-ggw2t3_625"><p id="1514680472#-ggw2t3_626">sortez vectorul de tokeni <span class="inline-code" id="1514680472#-ggw2t3_627">tokens</span> și apoi aplic funcția <span class="inline-code" id="1514680472#-ggw2t3_628">unique</span> pentru a elimina duplicatele, rezult&acirc;nd &icirc;ntr-un vector de tokeni unici <span class="inline-code" id="1514680472#-ggw2t3_629">retval</span>.</p><div class="code-block detached" id="1514680472#-ggw2t3_630"><pre><code class="language-csharp">retval = unique(sort(tokens));</code></pre></div></li></ul></section><section><h2 id="1514680472#cod-sursa" data-toc="cod-sursa#distinct-words.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="1514680472#-ggw2t3_631"><pre><code class="language-csharp">function retval = distinct_words(tokens)
+   % sort unique
+   retval = unique(sort(tokens));
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-1186563481">k_secv</h1><p id="-1186563481#-i9a4hu_1264">Funcția este folosită pentru a genera toate secvențele posibile de lungime <span class="inline-code" id="-1186563481#-i9a4hu_1266">k</span> dintr-un vector de cuvinte <span class="inline-code" id="-1186563481#-i9a4hu_1267">A</span>.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="-1186563481#-i9a4hu_1268"><span class="control" id="-1186563481#-i9a4hu_1269">Functia nu depinde de alte functii</span></p></div>
+</blockquote><section><h2 id="-1186563481#implementare" data-toc="implementare#k-secv.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="-1186563481#-i9a4hu_1271">function B = k_secv (A, k)</p></div>
+</blockquote><p id="-1186563481#-i9a4hu_1272">Funcția va returna un cell array <span class="inline-code" id="-1186563481#-i9a4hu_1273">B</span> care conține secvențele de cuvinte.</p><ol class="list list-decimal" id="-1186563481#-i9a4hu_1274" type="1" start="1"><li class="list-item" id="-1186563481#-i9a4hu_1275"><p id="-1186563481#-i9a4hu_1276">Se iterează prin vectorul de cuvinte <span class="inline-code" id="-1186563481#-i9a4hu_1277">A</span>, de la primul cuv&acirc;nt pana la <span class="inline-code" id="-1186563481#-i9a4hu_1278">length(A)-k</span>. Se creează o secvență de <span class="inline-code" id="-1186563481#-i9a4hu_1279">k</span> cuvinte și se adaugă la cell array-ul <span class="inline-code" id="-1186563481#-i9a4hu_1280">B</span>.</p><div class="code-block detached" id="-1186563481#-i9a4hu_1281"><pre><code class="language-csharp">for i = 1:length(A)-k
+   B{end+1} = strjoin(A(i:i+k-1), ' ');
+endfor</code></pre></div></li><li class="list-item" id="-1186563481#-i9a4hu_1282"><p id="-1186563481#-i9a4hu_1283">transpun <span class="inline-code" id="-1186563481#-i9a4hu_1284">B</span> pentru a avea un format coloană.</p><div class="code-block detached" id="-1186563481#-i9a4hu_1285"><pre><code class="language-csharp">B = B';</code></pre></div></li></ol></section><section><h2 id="-1186563481#cod-sursa" data-toc="cod-sursa#k-secv.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="-1186563481#-i9a4hu_1286"><pre><code class="language-csharp">function B = k_secv (A, k)
+   B = {};
+   for i = 1:length(A)-k
+      B{end+1} = strjoin(A(i:i+k-1), ' ');
+   endfor
+   B = B';  
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-694017448">distinct_k_secv</h1><p id="-694017448#qal9r8_612">Funcția este folosită pentru a elimina duplicatele dintr-un cell array <span class="inline-code" id="-694017448#qal9r8_614">cell_array</span>, lăs&acirc;nd doar elementele unice.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="-694017448#qal9r8_615"><span class="control" id="-694017448#qal9r8_616">Functia nu depinde de alte functii</span></p></div>
+</blockquote><section><h2 id="-694017448#implementare" data-toc="implementare#distinct-k-secv.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="-694017448#qal9r8_618">function unique_cell_array = distinct_k_secv (cell_array)</p></div>
+</blockquote><p id="-694017448#qal9r8_619">Funcția va returna un cell array <span class="inline-code" id="-694017448#qal9r8_620">unique_cell_array</span> care conține elementele unice din <span class="inline-code" id="-694017448#qal9r8_621">cell_array</span>.</p><ol class="list list-decimal" id="-694017448#qal9r8_622" type="1" start="1"><li class="list-item" id="-694017448#qal9r8_623"><p id="-694017448#qal9r8_624">aplic funcția <span class="inline-code" id="-694017448#qal9r8_625">unique</span> direct pe <span class="inline-code" id="-694017448#qal9r8_626">cell_array</span> pentru a obține elementele unice, care sunt apoi stocate &icirc;n <span class="inline-code" id="-694017448#qal9r8_627">unique_cell_array</span>.</p><div class="code-block detached" id="-694017448#qal9r8_628"><pre><code class="language-csharp">unique_cell_array = unique(cell_array);</code></pre></div></li></ol></section><section><h2 id="-694017448#cod-sursa" data-toc="cod-sursa#distinct-k-secv.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="-694017448#qal9r8_629"><pre><code class="language-csharp">function unique_cell_array = distinct_k_secv (cell_array)
+   % unique
+   unique_cell_array = unique(cell_array);
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="27213178">word_idx</h1><p id="27213178#-8vlqy8_737">Funcția este folosită pentru a crea un dicționar care asociază fiecare cuv&acirc;nt unic dintr-un array cu un indice unic.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="27213178#-8vlqy8_739"><span class="control" id="27213178#-8vlqy8_740">Functia nu depinde de alte functii</span></p></div>
+</blockquote><section><h2 id="27213178#implementare" data-toc="implementare#word-idx.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="27213178#-8vlqy8_742">function retval = word_idx (distinct_wds)</p></div>
+</blockquote><p id="27213178#-8vlqy8_743">Funcția va returna un dicționar <span class="inline-code" id="27213178#-8vlqy8_744">retval</span> care mapează cuvintele la indici.</p><ol class="list list-decimal" id="27213178#-8vlqy8_745" type="1" start="1"><li class="list-item" id="27213178#-8vlqy8_746"><p id="27213178#-8vlqy8_747">creez un array de celule indices care conține numerele de la 1 la lungimea array-ului <span class="inline-code" id="27213178#-8vlqy8_748">distinct_wds</span>, fiecare număr fiind convertit &icirc;ntr-o celulă.</p><div class="code-block detached" id="27213178#-8vlqy8_749"><pre><code class="language-csharp">indices = num2cell(1:length(distinct_wds));</code></pre></div></li><li class="list-item" id="27213178#-8vlqy8_750"><p id="27213178#-8vlqy8_751">creez un dicționar <span class="inline-code" id="27213178#-8vlqy8_752">retval</span> folosind obiectul <span class="inline-code" id="27213178#-8vlqy8_753">containers.Map</span>. Cuvintele unice din <span class="inline-code" id="27213178#-8vlqy8_754">distinct_wds</span> sunt folosite ca <span class="emphasis" id="27213178#-8vlqy8_755">chei</span>, iar indicii corespunzători din <span class="inline-code" id="27213178#-8vlqy8_756">indices</span> sunt folosiți ca <span class="emphasis" id="27213178#-8vlqy8_757">valori</span>.</p><div class="code-block detached" id="27213178#-8vlqy8_758"><pre><code class="language-csharp">retval = containers.Map(distinct_wds, indices);</code></pre></div></li></ol></section><section><h2 id="27213178#cod-sursa" data-toc="cod-sursa#word-idx.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="27213178#-8vlqy8_759"><pre><code class="language-csharp">function retval = word_idx (distinct_wds)
+   % array de indici 1 -&gt; len distinct_wds
+   indices = num2cell(1:length(distinct_wds));
+
+   % dictionar cu cheile distinct_wds
+   retval = containers.Map(distinct_wds, indices);
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="1664809559">k_secv_idx</h1><p id="1664809559#-9ade6e_344">Funcția este folosită pentru a crea un dicționar care asociază fiecare secvență distinctă de cuvinte dintr-un array cu un indice unic.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1664809559#-9ade6e_346"><span class="control" id="1664809559#-9ade6e_347">Functia nu depinde de alte functii</span></p></div>
+</blockquote><section><h2 id="1664809559#implementare" data-toc="implementare#k-secv-idx.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="1664809559#-9ade6e_349">function retval = k_secv_idx (distinct_k_sec)</p></div>
+</blockquote><p id="1664809559#-9ade6e_350">Funcția va returna un dicționar <span class="inline-code" id="1664809559#-9ade6e_351">retval</span> care mapează secvențele de cuvinte la indici.</p><ol class="list list-decimal" id="1664809559#-9ade6e_352" type="1" start="1"><li class="list-item" id="1664809559#-9ade6e_353"><p id="1664809559#-9ade6e_354">creez o listă de indici <span class="inline-code" id="1664809559#-9ade6e_355">indices</span> care conține numerele de la 1 p&acirc;nă la lungimea array-ului <span class="inline-code" id="1664809559#-9ade6e_356">distinct_k_sec</span>.</p><div class="code-block detached" id="1664809559#-9ade6e_357"><pre><code class="language-csharp">indices = 1:length(distinct_k_sec);</code></pre></div></li><li class="list-item" id="1664809559#-9ade6e_358"><p id="1664809559#-9ade6e_359">creez un dicționar <span class="inline-code" id="1664809559#-9ade6e_360">retval</span> folosind obiectul <span class="inline-code" id="1664809559#-9ade6e_361">containers.Map</span>. Secvențele unice din <span class="inline-code" id="1664809559#-9ade6e_362">distinct_k_sec</span> sunt folosite ca <span class="emphasis" id="1664809559#-9ade6e_363">chei</span>, iar indicii corespunzători din <span class="inline-code" id="1664809559#-9ade6e_364">indices</span> sunt folosiți ca <span class="emphasis" id="1664809559#-9ade6e_365">valori</span>.</p><div class="code-block detached" id="1664809559#-9ade6e_366"><pre><code class="language-csharp">retval = containers.Map(distinct_k_sec, indices);</code></pre></div></li></ol></section><section><h2 id="1664809559#cod-sursa" data-toc="cod-sursa#k-secv-idx.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="1664809559#-9ade6e_367"><pre><code class="language-csharp">function retval = k_secv_idx (distinct_k_sec)
+   % listă de indici  1 la len distinct_k_sec
+   indices = 1:length(distinct_k_sec);
+
+   % dictionar cu cheile distinct_k_sec
+   retval = containers.Map(distinct_k_sec, indices);
+endfunction</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="755568165">stochastic_matrix</h1><p id="755568165#-yvr3pr_962">Funcția este folosită pentru a construi o matrice stocastică dintr-un corpus de cuvinte, bazată pe secvențe de cuvinte de lungime <span class="inline-code" id="755568165#-yvr3pr_964">k</span>.</p><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="755568165#-yvr3pr_965"><span class="control" id="755568165#-yvr3pr_966">Functia nu depinde de alte functii</span></p></div>
+</blockquote><section><h2 id="755568165#implementare" data-toc="implementare#stochastic-matrix.md-implementare">Implementare</h2><blockquote class="prompt flex bordered-element-rounded tip detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p id="755568165#-yvr3pr_968">function retval = stochastic_matrix(k_secv_corpus, corpus_words, words_set, k_secv_set, k)</p></div>
+</blockquote><p id="755568165#-yvr3pr_969">Funcția va returna o matrice stocastică <span class="inline-code" id="755568165#-yvr3pr_970">retval</span>, care reprezintă frecvențele de tranziție &icirc;ntre secvențele de cuvinte și cuvintele următoare din corpus.</p><ol class="list list-decimal" id="755568165#-yvr3pr_971" type="1" start="1"><li class="list-item" id="755568165#-yvr3pr_972"><p id="755568165#-yvr3pr_973">convertesc cuvintele din corpus și secvențele de cuvinte &icirc;n seturi unice pentru a reduce redundanța și pentru a accelera accesul la date.</p><div class="code-block detached" id="755568165#-yvr3pr_974"><pre><code class="language-csharp">[words_set, ~, corpus_idx] = unique(corpus_words);
+[~, ~, k_secv_idx] = unique(k_secv_corpus);</code></pre></div></li><li class="list-item" id="755568165#-yvr3pr_975"><p id="755568165#-yvr3pr_976">prealoc matricea de rezultate <span class="inline-code" id="755568165#-yvr3pr_977">retval</span> cu zerouri,</p><div class="code-block detached" id="755568165#-yvr3pr_978"><pre><code class="language-csharp">retval = zeros(length(k_secv_set), length(words_set));</code></pre></div></li><li class="list-item" id="755568165#-yvr3pr_979"><p id="755568165#-yvr3pr_980">calculează indexul maxim p&acirc;nă la care se poate itera &icirc;n corpus fără a depăși limita acestuia</p><div class="code-block detached" id="755568165#-yvr3pr_981"><pre><code class="language-csharp">max_word_index = length(corpus_words) - k;</code></pre></div></li><li class="list-item" id="755568165#-yvr3pr_982"><p id="755568165#-yvr3pr_983">iterez prin corpus și se calculez frecvențele de apariție a fiecărui cuv&acirc;nt care urmează după o secvență de cuvinte de lungime <span class="inline-code" id="755568165#-yvr3pr_984">k</span>. Frecvențele sunt actualizate &icirc;n matricea <span class="inline-code" id="755568165#-yvr3pr_985">retval</span>.</p><div class="code-block detached" id="755568165#-yvr3pr_986"><pre><code class="language-csharp">for i = 1:max_word_index
+     k_seq_index = k_secv_idx(i);
+     next_word_index = corpus_idx(i + k);
+     retval(k_seq_index, next_word_index) = retval(k_seq_index, next_word_index) + 1;
+end</code></pre></div></li></ol></section><section><h2 id="755568165#cod-sursa" data-toc="cod-sursa#stochastic-matrix.md-cod-sursa">Cod sursa</h2><div class="code-block detached" id="755568165#-yvr3pr_987"><pre><code class="language-csharp">function retval = stochastic_matrix(k_secv_corpus, corpus_words, words_set, k_secv_set, k)
+      % Convertesc seturile in celule pentru acces ultra fast
+      [words_set, ~, corpus_idx] = unique(corpus_words);
+      [~, ~, k_secv_idx] = unique(k_secv_corpus);
+
+      % prealoc matricea de rezultate
+      retval = zeros(length(k_secv_set), length(words_set));
+
+      % Calculez index maxim
+      max_word_index = length(corpus_words) - k;
+
+      % vectorizez si calculez frecventele
+      for i = 1:max_word_index
+         k_seq_index = k_secv_idx(i);
+         next_word_index = corpus_idx(i + k);
+         retval(k_seq_index, next_word_index) = retval(k_seq_index, next_word_index) + 1;
+      end
+endfunction</code></pre></div></section></article></div></section></div></body></html>

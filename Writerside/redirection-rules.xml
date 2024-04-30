@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://resources.jetbrains.com/writerside/1.0/redirection-rules.dtd">
+<rules>
+    <!-- format is as follows
+    <rule id="<unique id>">
+        <accepts>page.html</accepts>
+    </rule>
+    -->
+    <rule id="413aed39">
+        <description>Created after removal of "Reference2" from mn_hw</description>
+        <accepts>Reference2.html</accepts>
+    </rule>
+    <rule id="43355ec">
+        <description>Created after removal of "Tutorial" from mn_hw</description>
+        <accepts>Tutorial.html</accepts>
+    </rule>
+    <rule id="72a964ac">
+        <description>Created after removal of "Reference" from mn_hw</description>
+        <accepts>Reference.html</accepts>
+    </rule>
+    <rule id="31f1e170">
+        <description>Created after removal of "How to" from mn_hw</description>
+        <accepts>How-to.html</accepts>
+    </rule>
+    <rule id="6463833a">
+        <description>Created after removal of "Overview" from mn_hw</description>
+        <accepts>Overview.html</accepts>
+    </rule>
+    <rule id="658d5e85">
+        <description>Created after removal of "Section Starting Page" from mn_hw</description>
+        <accepts>Section-Starting-Page.html</accepts>
+    </rule>
+    <rule id="7bdc098f">
+        <description>Created after removal of "DetectiaAnomaliilor" from mn_hw</description>
+        <accepts>DetectiaAnomaliilor.html</accepts>
+    </rule>
+    <rule id="174e0eb1">
+        <description>Created after removal of "Tutorial" from mn_hw</description>
+        <accepts>Tutorial.html</accepts>
+    </rule>
+    <rule id="1d2d7b2f">
+        <description>Created after removal of "How to" from mn_hw</description>
+        <accepts>How-to.html</accepts>
+    </rule>
+    <rule id="3593f6a1">
+        <description>Created after removal of "cholesky" from mn_hw</description>
+        <accepts>cholesky.html</accepts>
+    </rule>
+    <rule id="6ef3f637">
+        <description>Created after removal of "stochastic_matrix" from mn_hw</description>
+        <accepts>stochastic-matrix.html</accepts>
+    </rule>
+</rules>

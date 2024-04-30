@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <footer>
+        <copyright>2024 Sarmasag Rares-Andrei</copyright>
+        <social type="instagram" href="https://instagram.com/rares9301"/>
+    </footer>
+
+    <build-profile instance="m">
+        <variables>
+            <noindex-content>true</noindex-content>
+        </variables>
+    </build-profile>
+
+</buildprofiles>

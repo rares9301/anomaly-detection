@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="m"
+                 name="mn_hw"
+                 start-page="starter.md">
+
+    <toc-element topic="starter.md">
+        <toc-element topic="DetectiaAnomaliilor.md">
+            <toc-element topic="estimate-gaussian.md"/>
+            <toc-element topic="multivariate-gaussian.md"/>
+            <toc-element topic="optimal-threshold.md"/>
+            <toc-element topic="identify-outliers.md"/>
+        </toc-element>
+        <toc-element topic="Kernel-Regression.md">
+            <toc-element topic="kernel-functions.md"/>
+            <toc-element topic="build-kernel.md"/>
+            <toc-element topic="cholesky.md">
+            </toc-element>
+            <toc-element topic="get-lower-inverse.md"/>
+            <toc-element topic="get-predictions-params.md"/>
+            <toc-element topic="get-prediction-params-iter.md"/>
+            <toc-element topic="split-dataset.md"/>
+        </toc-element>
+        <toc-element topic="Markov-Text-Generation.md">
+            <toc-element topic="distinct-words.md"/>
+            <toc-element topic="k-secv.md"/>
+            <toc-element topic="distinct-k-secv.md"/>
+            <toc-element topic="word-idx.md"/>
+            <toc-element topic="k-secv-idx.md"/>
+            <toc-element topic="stochastic-matrix.md"/>
+        </toc-element>
+    </toc-element>
+</instance-profile>
