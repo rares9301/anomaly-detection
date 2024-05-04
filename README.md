@@ -17,7 +17,7 @@ Proiectul se află într-un stadiu final.
 > Eventuale sugestii sau modificări sunt așteptate cu căldură. 🌟
 
 ## Author
-### Rares Andrei Sarmasag
+### Rareș-Andrei Sărmășag
 _student at Polithenica Bucuresti - Faculty of Automatic Control and Computer Science_
 
 Seria CB-312 @ CTI 2024
