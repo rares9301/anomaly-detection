@@ -1,0 +1,78 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-04-30T19:01:20.6096916"><title>get_prediction_params_iter | mn_hw</title><script type="application/json" id="virtual-toc-data">[{"id":"prerequisites","level":0,"title":"Prerequisites","anchor":"#prerequisites"},{"id":"implementare","level":0,"title":"Implementare","anchor":"#implementare"},{"id":"cod-sursa","level":0,"title":"Cod sursa","anchor":"#cod-sursa"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="get_prediction_params_iter | mn_hw"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="mn_hw Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/get-prediction-params-iter.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="get_prediction_params_iter | mn_hw"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/get-prediction-params-iter.html#webpage",
+    "url": "writerside-documentation/get-prediction-params-iter.html",
+    "name": "get_prediction_params_iter | mn_hw",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "mn_hw Help"
+}</script><!-- End Schema.org --></head><body data-id="get-prediction-params-iter" data-main-title="get_prediction_params_iter" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="starter.md|Tema1 MN///Kernel-Regression.md|Kernel Regression"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>mn_hw  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="get-prediction-params-iter" id="get-prediction-params-iter.md">get_prediction_params_iter</h1><p id="w404p1_2714">Funcția este folosită pentru a calcula parametrii de predicție &icirc;ntr-un mod iterativ, folosind metoda gradientului conjugat.</p><aside class="prompt" data-type="warning" data-title="" id="w404p1_2715"><p id="w404p1_2716"><span class="control" id="w404p1_2717">Functia apeleaza <code class="code" id="w404p1_2718">conjugate_gradient</code></span></p></aside><section class="chapter"><h2 id="prerequisites" data-toc="prerequisites">Prerequisites</h2><p id="w404p1_2719">Urmatoarele functii sunt necesare pentru rezolvarea task-ului:</p><ul class="list _bullet" id="w404p1_2720"><li class="list__item" id="w404p1_2721"><p>conjugate_gradient</p></li></ul><div class="code-collapse" data-lang="csharp" data-is-expanded="true" data-synopsis="function [x] = conjugate_gradient_optimized(A, b, x0, tol, max_iter)">
+  function [x] = conjugate_gradient_optimized(A, b, x0, tol, max_iter)
+       % initializez variabile
+        r = b - A * x0; % reziduu
+       v = r;           % dirctie de cautare
+       x = x0;          % solutie
+       tol_sq = tol^2;  % toleranta^2 (eficientizare)
+       k = 0;           % contor
+
+       % pre-calculez prod scalar al reziduului inital
+       rho = r' * r;
+
+       % Iterez pana la convergenta sau max_iter
+       while k &lt; max_iter &amp;&amp; rho &gt; tol_sq
+           Av = A * v;
+           alpha = rho / (v' * Av);
+           x = x + alpha * v;  % actualizez solutia
+           r = r - alpha * Av; % actualizez reziduu
+           rho_new = r' * r;   % noul produs scalar al reziduului
+           beta = rho_new / rho;
+           v = r + beta * v;   % actualizez directia de cautare
+           rho = rho_new;      % actualizez produsul scalar al reziduului
+           k = k + 1;          % incrementez contor
+       end
+   end
+
+</div></section><section class="chapter"><h2 id="implementare" data-toc="implementare">Implementare</h2><aside class="prompt" data-type="tip" data-title="" id="w404p1_2723"><p id="w404p1_2724">function [a] = get_prediction_params_iterative (K, y, lambda)</p></aside><p id="w404p1_2725">Funcția va returna un vector <code class="code" id="w404p1_2726">a</code> care conține parametrii de predicție calculați.</p><ol class="list _decimal" id="w404p1_2727" type="1"><li class="list__item" id="w404p1_2728"><p id="w404p1_2729">determin numărul de linii din matricea kernel <code class="code" id="w404p1_2730">K</code></p><div class="code-block" data-lang="csharp">
+      m = size(K, 1);
+
+</div></li><li class="list__item" id="w404p1_2732"><p id="w404p1_2733">regularizez matricea kernel <code class="code" id="w404p1_2734">K</code> prin adăugarea produsului dintre <code class="code" id="w404p1_2735">lambda</code> și matricea identitate <code class="code" id="w404p1_2736">eye(m)</code> la <code class="code" id="w404p1_2737">K</code>, rezult&acirc;nd matricea <code class="code" id="w404p1_2738">A</code></p><div class="code-block" data-lang="csharp">
+   A = lambda * eye(m) + K;
+
+</div></li><li class="list__item" id="w404p1_2740"><p id="w404p1_2741">inițializez vectorul de start x0 pentru algoritmul iterativ, set&acirc;nd toate valorile la zero.</p><div class="code-block" data-lang="csharp">
+    x0 = zeros(m, 1);
+
+</div></li><li class="list__item" id="w404p1_2743"><p id="w404p1_2744">setez toleranta</p><div class="code-block" data-lang="csharp">
+tol = 1e-6;
+</div></li><li class="list__item" id="w404p1_2746"><p id="w404p1_2747">setez un număr maxim de iterații <code class="code" id="w404p1_2748">max_iter</code> pentru algoritmul iterativ.</p><div class="code-block" data-lang="csharp">
+ max_iter = 100;
+
+</div></li><li class="list__item" id="w404p1_2750"><p id="w404p1_2751">aplic metoda gradientului conjugat pentru a rezolva sistemul liniar</p><div class="code-block" data-lang="csharp">
+ a = conjugate_gradient(A, y, x0, tol, max_iter);
+</div></li></ol></section><section class="chapter"><h2 id="cod-sursa" data-toc="cod-sursa">Cod sursa</h2><div class="code-collapse" data-lang="csharp" data-is-expanded="true" data-synopsis="function [a] = get_prediction_params_iterative (K, y, lambda)">
+function [a] = get_prediction_params_iterative (K, y, lambda)
+     % numarul de linii
+     m = size(K, 1);
+
+     % regularizez matricea K
+     A = lambda * eye(m) + K;
+
+     % intializez x0
+     x0 = zeros(m, 1);
+
+     % Setez toleranta
+     tol = 1e-6;
+
+     % numarul maxim de iteratii
+     max_iter = 100;
+
+     % aplic conjugatul
+     a = conjugate_gradient(A, y, x0, tol, max_iter);
+ endfunction
+</div></section><div class="last-modified">Last modified: 30 April 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="get-predictions-params.html" class="navigation-links__prev">get_prediction_params</a><a href="split-dataset.html" class="navigation-links__next">split_dataset</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.js"></script></body></html>

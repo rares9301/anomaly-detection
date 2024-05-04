@@ -1,0 +1,53 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-04-30T19:01:20.6086871"><title>split_dataset | mn_hw</title><script type="application/json" id="virtual-toc-data">[{"id":"implementare","level":0,"title":"Implementare","anchor":"#implementare"},{"id":"cod-sursa","level":0,"title":"Cod sursa","anchor":"#cod-sursa"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="split_dataset | mn_hw"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="mn_hw Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/split-dataset.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="split_dataset | mn_hw"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/split-dataset.html#webpage",
+    "url": "writerside-documentation/split-dataset.html",
+    "name": "split_dataset | mn_hw",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "mn_hw Help"
+}</script><!-- End Schema.org --></head><body data-id="split-dataset" data-main-title="split_dataset" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="starter.md|Tema1 MN///Kernel-Regression.md|Kernel Regression"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>mn_hw  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="split-dataset" id="split-dataset.md">split_dataset</h1><p id="i5m39m6_1733">Funcția este folosită pentru a &icirc;mpărți un set de date <code class="code" id="i5m39m6_1734">X</code> și etichetele asociate <code class="code" id="i5m39m6_1735">y</code> &icirc;n două subgrupuri: unul pentru antrenament și unul pentru predicții, bazat pe un procentaj dat.</p><aside class="prompt" data-type="note" data-title="" id="i5m39m6_1736"><p id="i5m39m6_1737"><span class="control" id="i5m39m6_1738">Functia nu depinde de alte functii</span></p></aside><section class="chapter"><h2 id="implementare" data-toc="implementare">Implementare</h2><aside class="prompt" data-type="tip" data-title="" id="i5m39m6_1739"><p id="i5m39m6_1740">function [X_train, y_train, X_pred, y_pred] = split_dataset (X, y, percentage)</p></aside><p id="i5m39m6_1741">Funcția va returna patru seturi de date: <code class="code" id="i5m39m6_1742">X_train</code> și <code class="code" id="i5m39m6_1743">y_train</code> pentru antrenament, și <code class="code" id="i5m39m6_1744">X_pred</code> și <code class="code" id="i5m39m6_1745">y_pred</code> pentru predicții.</p><ol class="list _decimal" id="i5m39m6_1746" type="1"><li class="list__item" id="i5m39m6_1747"><p id="i5m39m6_1748">determin numărul total de puncte de date din setul <code class="code" id="i5m39m6_1749">X</code></p><div class="code-block" data-lang="csharp">
+num_data = size(X, 1);
+</div></li><li class="list__item" id="i5m39m6_1751"><p id="i5m39m6_1752">calculez numărul de puncte de date care vor fi folosite pentru antrenament, rotunjind produsul dintre procentajul dat și numărul total de date.</p><div class="code-block" data-lang="csharp">
+num_train_data = round(percentage * num_data);
+</div></li><li class="list__item" id="i5m39m6_1754"><p id="i5m39m6_1755">creez un vector de indici <code class="code" id="i5m39m6_1756">train_indices</code> pentru datele de antrenament</p><div class="code-block" data-lang="csharp">
+train_indices = 1:num_train_data;
+</div></li><li class="list__item" id="i5m39m6_1758"><p id="i5m39m6_1759">creez un vector de indici <code class="code" id="i5m39m6_1760">pred_indices</code> pentru datele de predicție</p><div class="code-block" data-lang="csharp">
+pred_indices = num_train_data + 1:num_data;
+</div></li><li class="list__item" id="i5m39m6_1762"><p id="i5m39m6_1763">extrag datele de antrenament <code class="code" id="i5m39m6_1764">X_trai</code>n și etichetele <code class="code" id="i5m39m6_1765">y_train</code> folosind indicii de antrenament.</p><div class="code-block" data-lang="csharp">
+X_train = X(train_indices, :);
+y_train = y(train_indices);
+</div></li><li class="list__item" id="i5m39m6_1767"><p id="i5m39m6_1768">extrag datele de predicție <code class="code" id="i5m39m6_1769">X_pred</code> și etichetele <code class="code" id="i5m39m6_1770">y_pred</code> folosind indicii de predicție.</p><div class="code-block" data-lang="csharp">
+X_pred = X(pred_indices, :);
+y_pred = y(pred_indices);
+</div></li></ol></section><section class="chapter"><h2 id="cod-sursa" data-toc="cod-sursa">Cod sursa</h2><div class="code-collapse" data-lang="csharp" data-is-expanded="true" data-synopsis="function [X_train, y_train, X_pred, y_pred] = split_dataset (X, y, percentage)">
+function [X_train, y_train, X_pred, y_pred] = split_dataset (X, y, percentage)
+   % total data points
+   num_data = size(X, 1);
+
+   % round 
+   num_train_data = round(percentage * num_data);
+
+   % indices for training
+   train_indices = 1:num_train_data;
+
+   % indices for preds
+   pred_indices = num_train_data + 1:num_data;
+
+   % training data
+   X_train = X(train_indices, :);
+   y_train = y(train_indices);
+
+   % prediction data
+   X_pred = X(pred_indices, :);
+   y_pred = y(pred_indices);
+
+endfunction
+</div></section><div class="last-modified">Last modified: 30 April 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="get-prediction-params-iter.html" class="navigation-links__prev">get_prediction_params_iter</a><a href="markov-text-generation.html" class="navigation-links__next">Markov Text Generation</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.js"></script></body></html>

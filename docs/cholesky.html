@@ -1,0 +1,38 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-04-30T19:01:20.6086871"><title>cholesky | mn_hw</title><script type="application/json" id="virtual-toc-data">[{"id":"implementare","level":0,"title":"Implementare","anchor":"#implementare"},{"id":"cod-sursa","level":0,"title":"Cod sursa","anchor":"#cod-sursa"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="cholesky | mn_hw"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="mn_hw Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/cholesky.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="cholesky | mn_hw"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/cholesky.html#webpage",
+    "url": "writerside-documentation/cholesky.html",
+    "name": "cholesky | mn_hw",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "mn_hw Help"
+}</script><!-- End Schema.org --></head><body data-id="cholesky" data-main-title="cholesky" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="starter.md|Tema1 MN///Kernel-Regression.md|Kernel Regression"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>mn_hw  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="cholesky" id="cholesky.md">cholesky</h1><p id="i5eag36_1606">Descompunerea Cholesky este o metodă de factorizare a unei matrice simetrice pozitiv definite &icirc;n produsul unei matrice inferioare triunghiulare și transpusa sa.</p><aside class="prompt" data-type="note" data-title="" id="i5eag36_1607"><p id="i5eag36_1608"><span class="control" id="i5eag36_1609">Functia nu depinde de alte functii</span></p></aside><section class="chapter"><h2 id="implementare" data-toc="implementare">Implementare</h2><aside class="prompt" data-type="tip" data-title="" id="i5eag36_1610"><p id="i5eag36_1611">function L = cholesky(A)</p></aside><p id="i5eag36_1612">Funcția va returna o matrice triunghiulară inferioară <code class="code" id="i5eag36_1613">L</code> caracteristica descompunerii Cholesky</p><ol class="list _decimal" id="i5eag36_1614" type="1"><li class="list__item" id="i5eag36_1615"><p id="i5eag36_1616">determin dimensiunea matricei <code class="code" id="i5eag36_1617">A</code> și initializez matricea <code class="code" id="i5eag36_1618">L</code> ca o matrice pătratică de dimensiune <code class="code" id="i5eag36_1619">n</code> x <code class="code" id="i5eag36_1620">n</code></p><div class="code-block" data-lang="csharp">
+   [n, m] = size(A);
+   L = zeros(n);
+</div></li><li class="list__item" id="i5eag36_1622"><p id="i5eag36_1623">calculez elementele diagonale ale matricei <code class="code" id="i5eag36_1624">L</code> folosind rădăcina pătrată a diferenței dintre elementul corespunzător din <code class="code" id="i5eag36_1625">A</code> și suma pătratelor elementelor anterioare din aceeași linie.</p><div class="code-block" data-lang="csharp">
+for i = 1:n 
+   L(i, i) = sqrt(A(i, i) - dot(L(i, 1:i-1), L(i, 1:i-1)));
+</div></li><li class="list__item" id="i5eag36_1627"><p id="i5eag36_1628">calculez elementele non-diagonale ale matricei <code class="code" id="i5eag36_1629">L</code> prin scăderea produsului scalar al elementelor anterioare din linia <code class="code" id="i5eag36_1630">i</code> și coloana <code class="code" id="i5eag36_1631">j</code> și &icirc;mpărțirea rezultatului la elementul diagonal curent din <code class="code" id="i5eag36_1632">L</code></p><div class="code-block" data-lang="csharp">
+for j = i+1:n
+     L(j, i) = (A(j, i) - dot(L(i, 1:i-1), L(j, 1:i-1))) / L(i, i);
+</div></li></ol></section><section class="chapter"><h2 id="cod-sursa" data-toc="cod-sursa">Cod sursa</h2><div class="code-collapse" data-lang="csharp" data-is-expanded="true" data-synopsis="function L = cholesky(A)">
+function L = cholesky(A)
+   [n, m] = size(A);
+   L = zeros(n); 
+
+   for i = 1:n 
+      L(i, i) = sqrt(A(i, i) - dot(L(i, 1:i-1), L(i, 1:i-1)));
+      for j = i+1:n
+         L(j, i) = (A(j, i) - dot(L(i, 1:i-1), L(j, 1:i-1))) / L(i, i);
+      end
+   end
+endfunction
+
+</div></section><div class="last-modified">Last modified: 30 April 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="build-kernel.html" class="navigation-links__prev">build_kernel</a><a href="get-lower-inverse.html" class="navigation-links__next">get_lower_inverse</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.js"></script></body></html>

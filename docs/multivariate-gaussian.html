@@ -1,0 +1,43 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-04-30T19:01:20.6086871"><title>multivariate_gaussian | mn_hw</title><script type="application/json" id="virtual-toc-data">[{"id":"implementare","level":0,"title":"Implementare","anchor":"#implementare"},{"id":"cod-sursa","level":0,"title":"Cod sursa","anchor":"#cod-sursa"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="multivariate_gaussian | mn_hw"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="mn_hw Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/multivariate-gaussian.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="multivariate_gaussian | mn_hw"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/multivariate-gaussian.html#webpage",
+    "url": "writerside-documentation/multivariate-gaussian.html",
+    "name": "multivariate_gaussian | mn_hw",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "mn_hw Help"
+}</script><!-- End Schema.org --></head><body data-id="multivariate-gaussian" data-main-title="multivariate_gaussian" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="starter.md|Tema1 MN///DetectiaAnomaliilor.md|Detectia Anomaliilor"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>mn_hw  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="multivariate-gaussian" id="multivariate-gaussian.md">multivariate_gaussian</h1><p id="-bxx75e_3491">Aceasta functie este folosita pentru a calcula probabilitățile unui set de date <code class="code" id="-bxx75e_3492">X</code> sub o distribuție gaussiană multivariată, dată prin valorile medii <code class="code" id="-bxx75e_3493">mean_values</code> și matricea de covarianță <code class="code" id="-bxx75e_3494">variances</code>.</p><aside class="prompt" data-type="note" data-title="" id="-bxx75e_3495"><p id="-bxx75e_3496"><span class="control" id="-bxx75e_3497">Functia nu depinde de alte functii si este asemanatoare functiei <code class="code" id="-bxx75e_3498">gaussian_distribution</code>. Pentru simplitate, voi explica doar functia <code class="code" id="-bxx75e_3499">multivariate_gaussian</code></span></p></aside><figure id="-bxx75e_3500"><img alt="multivariate_gaussian" src="images/multivairate.png" class="article__bordered-element--rounded" title="multivariate_gaussian" width="330" height="237"></figure><section class="chapter"><h2 id="implementare" data-toc="implementare">Implementare</h2><aside class="prompt" data-type="tip" data-title="" id="-bxx75e_3501"><p id="-bxx75e_3502">function probabilities = multivariate_gaussian(X, mean_values, variances)</p></aside><p id="-bxx75e_3503">Funcția va returna un vector <code class="code" id="-bxx75e_3504">probabilities</code> care conține probabilitățile pentru fiecare exemplu din <code class="code" id="-bxx75e_3505">X</code>.</p><ol class="list _decimal" id="-bxx75e_3506" type="1"><li class="list__item" id="-bxx75e_3507"><p id="-bxx75e_3508">obțin dimensiunea matricei <code class="code" id="-bxx75e_3509">X</code>, unde m reprezintă numărul de exemple și n numărul de caracteristici.</p><div class="code-block" data-lang="csharp">
+  [m, n] = size(X);
+</div></li><li class="list__item" id="-bxx75e_3511"><p id="-bxx75e_3512">calculez diferența dintre fiecare exemplu din <code class="code" id="-bxx75e_3513">X</code> și vectorul mediei <code class="code" id="-bxx75e_3514">mean_values</code>.</p><div class="code-block" data-lang="csharp">
+difference = bsxfun(@minus, X, mean_values)
+</div></li><li class="list__item" id="-bxx75e_3516"><p id="-bxx75e_3517">calculez inversa matricei de covarianță <code class="code" id="-bxx75e_3518">variances</code>.</p><div class="code-block" data-lang="csharp">
+inverse_variance = inv(variances);
+</div></li><li class="list__item" id="-bxx75e_3520"><p id="-bxx75e_3521">calculez determinantul matricei de covarianță <code class="code" id="-bxx75e_3522">variances</code>.</p><div class="code-block" data-lang="csharp">
+determinant = det(variances);
+</div></li><li class="list__item" id="-bxx75e_3524"><p id="-bxx75e_3525">calculez exponentul pentru funcția de densitate a probabilității, care este o parte esențială a ecuației pentru distribuția gaussiană multivariată.</p><div class="code-block" data-lang="csharp">
+exponent = -0.5 * sum((difference * inverse_variance) .* difference, 2);
+</div></li><li class="list__item" id="-bxx75e_3527"><p id="-bxx75e_3528">calculez probabilitățile pentru fiecare exemplu din <code class="code" id="-bxx75e_3529">X</code>, folosind formula pentru distribuția gaussiană multivariată.</p><div class="code-block" data-lang="csharp">
+probabilities = (1 / (sqrt((2 * pi)^n * determinant))) * exp(exponent);
+</div></li></ol></section><section class="chapter"><h2 id="cod-sursa" data-toc="cod-sursa">Cod sursa</h2><div class="code-collapse" data-lang="csharp" data-is-expanded="true" data-synopsis="function probabilities = multivariate_gaussian(X, mean_values, variances)">
+function probabilities = multivariate_gaussian(X, mean_values, variances)
+
+[m, n] = size(X); % matrix size
+difference = bsxfun(@minus, X, mean_values); % diff from mean
+inverse_variance = inv(variances); % inverse of matrix
+determinant = det(variances); % determinant
+
+% exponent
+exponent = -0.5 * sum((difference * inverse_variance) .* difference, 2);
+
+% probabilitati
+probabilities = (1 / (sqrt((2 * pi)^n * determinant))) * exp(exponent);
+
+endfunction
+</div></section><div class="last-modified">Last modified: 30 April 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="estimate-gaussian.html" class="navigation-links__prev">estimate_gaussian</a><a href="optimal-threshold.html" class="navigation-links__next">optimal_threshold</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.js"></script></body></html>

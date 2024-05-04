@@ -1,0 +1,41 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-04-30T19:01:20.6096916"><title>build_kernel | mn_hw</title><script type="application/json" id="virtual-toc-data">[{"id":"implementare","level":0,"title":"Implementare","anchor":"#implementare"},{"id":"cod-sursa","level":0,"title":"Cod sursa","anchor":"#cod-sursa"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="build_kernel | mn_hw"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="mn_hw Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/build-kernel.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="build_kernel | mn_hw"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/build-kernel.html#webpage",
+    "url": "writerside-documentation/build-kernel.html",
+    "name": "build_kernel | mn_hw",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "mn_hw Help"
+}</script><!-- End Schema.org --></head><body data-id="build-kernel" data-main-title="build_kernel" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="starter.md|Tema1 MN///Kernel-Regression.md|Kernel Regression"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>mn_hw  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="build-kernel" id="build-kernel.md">build_kernel</h1><p id="-i5djkh_1433">Funcția este utilizată pentru a construi o matrice kernel, care este o componentă esențială &icirc;n multi algoritmi de &icirc;nvățare automată, inclusiv &icirc;n SVMs.</p><aside class="prompt" data-type="note" data-title="" id="-i5djkh_1434"><p id="-i5djkh_1435"><span class="control" id="-i5djkh_1436">Functia nu depinde de alte functii</span></p></aside><section class="chapter"><h2 id="implementare" data-toc="implementare">Implementare</h2><aside class="prompt" data-type="tip" data-title="" id="-i5djkh_1437"><p id="-i5djkh_1438">function [K] = build_kernel (X, f, f_param)</p></aside><p id="-i5djkh_1439">Funcția va returna o matrice kernel <code class="code" id="-i5djkh_1440">K</code>, care este calculată folosind o funcție kernel <code class="code" id="-i5djkh_1441">f</code> și un parametru al acestei funcții <code class="code" id="-i5djkh_1442">f_param</code></p><ol class="list _decimal" id="-i5djkh_1443" type="1"><li class="list__item" id="-i5djkh_1444"><p id="-i5djkh_1445">determin numărul de <code class="code" id="-i5djkh_1446">num_data</code> din setul de date <code class="code" id="-i5djkh_1447">X</code>.</p><div class="code-block" data-lang="csharp">
+num_data = size(X, 1);
+</div></li><li class="list__item" id="-i5djkh_1449"><p id="-i5djkh_1450">inițializez matricea kernel <code class="code" id="-i5djkh_1451">K</code> ca o matrice pătratică de dimensiune <code class="code" id="-i5djkh_1452">num_data</code> x <code class="code" id="-i5djkh_1453">num_data</code></p><div class="code-block" data-lang="csharp">
+K = zeros(num_data, num_data);
+</div></li><li class="list__item" id="-i5djkh_1455"><p id="-i5djkh_1456">parcurg fiecare pereche de exemple de date pentru a calcula valorile kernel.</p><div class="code-block" data-lang="csharp">
+for i = 1:num_data
+ for j = 1:num_data
+</div></li><li class="list__item" id="-i5djkh_1458"><p id="-i5djkh_1459">calculează valoarea kernel pentru perechea de exemple <code class="code" id="-i5djkh_1460">i</code> și <code class="code" id="-i5djkh_1461">j</code> folosind funcția kernel <code class="code" id="-i5djkh_1462">f</code></p><div class="code-block" data-lang="csharp">
+K(i, j) = f(X(i, :), X(j, :), f_param);
+</div></li></ol></section><section class="chapter"><h2 id="cod-sursa" data-toc="cod-sursa">Cod sursa</h2><div class="code-collapse" data-lang="csharp" data-is-expanded="true" data-synopsis="function [K] = build_kernel (X, f, f_param)">
+function [K] = build_kernel (X, f, f_param)
+   % set size of matrix
+   num_data = size(X, 1);
+
+   % memory allocate
+   K = zeros(num_data, num_data);
+
+   % compute kernel values
+   for i = 1:num_data
+      for j = 1:num_data
+         % kernal value for i &lt;-&gt; j
+         K(i, j) = f(X(i, :), X(j, :), f_param);
+      end
+   end
+endfunction
+</div></section><div class="last-modified">Last modified: 30 April 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="kernel-functions.html" class="navigation-links__prev">kernel_functions</a><a href="cholesky.html" class="navigation-links__next">cholesky</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.js"></script></body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-04-30T19:01:20.6086871"><title>k_secv | mn_hw</title><script type="application/json" id="virtual-toc-data">[{"id":"implementare","level":0,"title":"Implementare","anchor":"#implementare"},{"id":"cod-sursa","level":0,"title":"Cod sursa","anchor":"#cod-sursa"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="k_secv | mn_hw"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="mn_hw Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/k-secv.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="k_secv | mn_hw"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/k-secv.html#webpage",
+    "url": "writerside-documentation/k-secv.html",
+    "name": "k_secv | mn_hw",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "mn_hw Help"
+}</script><!-- End Schema.org --></head><body data-id="k-secv" data-main-title="k_secv" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="starter.md|Tema1 MN///Markov-Text-Generation.md|Markov Text Generation"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>mn_hw  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="k-secv" id="k-secv.md">k_secv</h1><p id="-i9a4hu_1192">Funcția este folosită pentru a genera toate secvențele posibile de lungime <code class="code" id="-i9a4hu_1193">k</code> dintr-un vector de cuvinte <code class="code" id="-i9a4hu_1194">A</code>.</p><aside class="prompt" data-type="note" data-title="" id="-i9a4hu_1195"><p id="-i9a4hu_1196"><span class="control" id="-i9a4hu_1197">Functia nu depinde de alte functii</span></p></aside><section class="chapter"><h2 id="implementare" data-toc="implementare">Implementare</h2><aside class="prompt" data-type="tip" data-title="" id="-i9a4hu_1198"><p id="-i9a4hu_1199">function B = k_secv (A, k)</p></aside><p id="-i9a4hu_1200">Funcția va returna un cell array <code class="code" id="-i9a4hu_1201">B</code> care conține secvențele de cuvinte.</p><ol class="list _decimal" id="-i9a4hu_1202" type="1"><li class="list__item" id="-i9a4hu_1203"><p id="-i9a4hu_1204">Se iterează prin vectorul de cuvinte <code class="code" id="-i9a4hu_1205">A</code>, de la primul cuv&acirc;nt pana la <code class="code" id="-i9a4hu_1206">length(A)-k</code>. Se creează o secvență de <code class="code" id="-i9a4hu_1207">k</code> cuvinte și se adaugă la cell array-ul <code class="code" id="-i9a4hu_1208">B</code>.</p><div class="code-block" data-lang="csharp">
+   for i = 1:length(A)-k
+      B{end+1} = strjoin(A(i:i+k-1), ' ');
+   endfor
+</div></li><li class="list__item" id="-i9a4hu_1210"><p id="-i9a4hu_1211">transpun <code class="code" id="-i9a4hu_1212">B</code> pentru a avea un format coloană.</p><div class="code-block" data-lang="csharp">
+B = B'; 
+</div></li></ol></section><section class="chapter"><h2 id="cod-sursa" data-toc="cod-sursa">Cod sursa</h2><div class="code-collapse" data-lang="csharp" data-is-expanded="true" data-synopsis="function B = k_secv (A, k)">
+function B = k_secv (A, k)
+   B = {};
+   for i = 1:length(A)-k
+      B{end+1} = strjoin(A(i:i+k-1), ' ');
+   endfor
+   B = B';  
+endfunction
+</div></section><div class="last-modified">Last modified: 30 April 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="distinct-words.html" class="navigation-links__prev">distinct_words</a><a href="distinct-k-secv.html" class="navigation-links__next">distinct_k_secv</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b259/app.js"></script></body></html>
