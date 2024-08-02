@@ -10,7 +10,7 @@ Prima temă de casă la Metode Numerice:
 + Introducerea în învățarea supervizată.
 
 ## Contents
-Am prezentat conținutul temei tratate în [documentație](https://rares9301.github.io/mn_hw).
+Am prezentat conținutul temei tratate în [documentație](https://rares9301.github.io/anomaly-detection).
 
 ## Contributing
 Proiectul se află într-un stadiu final. 
