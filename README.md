@@ -1,4 +1,4 @@
-# Tema1 MN
+# Anomaly Detection
 
 ![MN team](/docs/images/numericalmethods.png)
 
