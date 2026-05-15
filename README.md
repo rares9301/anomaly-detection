@@ -3,10 +3,6 @@
 ![MN team](/docs/images/numericalmethods.png)
 
 ## Motivația temei
-Prima temă de casă la Metode Numerice:
-+ Familiarizarea cu mediul de programare GNU Octave și facilitățile oferite de acesta;
-+ Folosirea matricelor și a sistemelor de ecuații liniare pentru a modela probleme reale,
-întâlnite în viața de zi cu zi, precum lanțurile Markov;
 + Introducerea în învățarea supervizată.
 
 ## Contents
